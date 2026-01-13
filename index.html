@@ -338,17 +338,30 @@
                                                     : 'text-white hover:bg-white/10'
                                             }`}
                                         >
-                                            👁️ Supervisor View
+                                            👁️ Public View
                                         </button>
                                         <button
-                                            onClick={() => setViewMode('admin')}
+                                            onClick={() => {
+                                                if (viewMode === 'admin') {
+                                                    // Allow switching back to supervisor without password
+                                                    setViewMode('supervisor');
+                                                } else {
+                                                    // Require password to enter Admin Mode
+                                                    const password = prompt('🔐 Enter Admin Password:');
+                                                    if (password === 'HQCDP2026!EdD') {
+                                                        setViewMode('admin');
+                                                    } else if (password !== null) {
+                                                        alert('❌ Incorrect password. Access denied.');
+                                                    }
+                                                }
+                                            }}
                                             className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                                                 viewMode === 'admin'
                                                     ? 'bg-white text-purple-600 shadow-md'
                                                     : 'text-white hover:bg-white/10'
                                             }`}
                                         >
-                                            ⚙️ Admin Mode
+                                            {viewMode === 'admin' ? '👁️ Exit Admin' : '🔐 Admin Mode'}
                                         </button>
                                     </div>
 
@@ -458,44 +471,6 @@
                         <KPICard title="On Track" value={`${onTrackPercent}%`} icon="✓" color="purple" />
                     </div>
 
-                    {/* Stage Distribution */}
-                    <div className="bg-white rounded-xl shadow-md p-6">
-                        <h2 className="text-xl font-bold text-gray-900 mb-4">Pipeline Status</h2>
-                        <div className="space-y-3">
-                            {Object.entries(stats.stageDistribution).sort((a, b) => {
-                                if (typeof a[0] === 'string') return 1;
-                                if (typeof b[0] === 'string') return -1;
-                                return a[0] - b[0];
-                            }).map(([stage, count]) => {
-                                const stageDef = STAGE_DEFINITIONS[stage];
-                                const percentage = (count / stats.total) * 100;
-                                return (
-                                    <div key={stage} className="flex items-center gap-4">
-                                        <div className="w-32 text-sm font-medium text-gray-700 flex items-center gap-2">
-                                            <span>{stageDef.icon}</span>
-                                            <span>{stageDef.shortName}</span>
-                                        </div>
-                                        <div className="flex-1 bg-gray-200 rounded-full h-8 relative overflow-hidden">
-                                            <div
-                                                className="h-full flex items-center justify-end pr-3 text-white text-sm font-medium transition-all duration-500"
-                                                style={{
-                                                    width: `${percentage}%`,
-                                                    backgroundColor: stageDef.color,
-                                                    minWidth: count > 0 ? '40px' : '0'
-                                                }}
-                                            >
-                                                {count > 0 && count}
-                                            </div>
-                                        </div>
-                                        <div className="w-16 text-right text-sm font-medium text-gray-600">
-                                            {percentage.toFixed(0)}%
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-
                     {/* Department/Division Breakdown */}
                     <div className="bg-white rounded-xl shadow-md p-6">
                         <h2 className="text-xl font-bold text-gray-900 mb-4">Courses by Department</h2>
@@ -520,39 +495,6 @@
                         </div>
                     </div>
 
-                    {/* Filters */}
-                    <div className="bg-white rounded-xl shadow-md p-6">
-                        <div className="flex flex-wrap gap-4 items-center">
-                            <div className="flex-1 min-w-[300px]">
-                                <input
-                                    type="text"
-                                    placeholder="🔍 Search courses..."
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                />
-                            </div>
-                            <select
-                                value={filterStage}
-                                onChange={(e) => setFilterStage(e.target.value === 'all' ? 'all' : parseInt(e.target.value))}
-                                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
-                            >
-                                <option value="all">All Stages</option>
-                                {Object.entries(STAGE_DEFINITIONS).map(([key, val]) => (
-                                    <option key={key} value={key}>{val.icon} {val.name}</option>
-                                ))}
-                            </select>
-                            <select
-                                value={filterCTE}
-                                onChange={(e) => setFilterCTE(e.target.value)}
-                                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
-                            >
-                                <option value="all">All Types</option>
-                                <option value="cte">CTE Only</option>
-                                <option value="non-cte">Non-CTE Only</option>
-                            </select>
-                        </div>
-                    </div>
 
                     {/* Course Timeline */}
                     <CourseTimeline courses={courses} />
