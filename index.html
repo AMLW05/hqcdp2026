@@ -352,6 +352,33 @@
                                         </button>
                                     </div>
 
+                                    {/* Import Button */}
+                                    {courses.length < 10 && (
+                                        <button
+                                            onClick={() => {
+                                                if (confirm('Import Spring 2026 Master Course List (38 courses)?')) {
+                                                    fetch('sp2026-courses-data.json')
+                                                        .then(res => res.json())
+                                                        .then(data => {
+                                                            setCourses(data.courses);
+                                                            alert('✅ Imported 38 SP2026 courses!\n\n- 16 In Progress\n- 7 Anticipated/Scheduled\n- 1 Certified\n- 14 On Hold (hidden from Supervisor View)');
+                                                        })
+                                                        .catch(err => {
+                                                            console.error(err);
+                                                            alert('Error loading data. Using inline data instead...');
+                                                            // Fallback to inline data if file load fails
+                                                            const inlineData = {"courses":[{"id":"BPR-130","title":"Blueprint Reading","instructor":"Keith Carter","instructorEmail":"kcarter@ftcc.edu","department":"Industrial","courseRep":"Donald Keith Carter","complexity":"High","cte":true,"stage":4,"microstage":4.2,"progress":65,"totalModules":8,"modulesCompleted":4,"deadline":"2026-03-15","lastUpdated":"2026-01-13","notes":"Tremendous progress! Internal review prep in progress.","publicNotes":"Preparing for internal review - strong progress","status":"In Progress","hideFromSupervisor":false,"archived":false},{"id":"CSC-113","title":"Computer Science Fundamentals","instructor":"Andrew Norris","instructorEmail":"anorris@ftcc.edu","department":"IT","courseRep":"Andrew Norris","complexity":"High","cte":true,"stage":3,"microstage":3.5,"progress":55,"totalModules":14,"modulesCompleted":8,"deadline":"2026-03-30","lastUpdated":"2026-01-13","notes":"In progress. Evaluating student engagement.","publicNotes":"Active development with engagement analysis","status":"In Progress","hideFromSupervisor":false,"archived":false},{"id":"MKT-120","title":"Principles of Marketing","instructor":"Sharon Seaford","instructorEmail":"sseaford@ftcc.edu","department":"Business","courseRep":"Sharon Seaford","complexity":"Medium","cte":true,"stage":7,"microstage":7.0,"progress":100,"totalModules":10,"modulesCompleted":10,"deadline":"2025-12-15","lastUpdated":"2025-12-15","notes":"Internally Certified Fall 2025.","publicNotes":"Certified Fall 2025","status":"Internally Certified","hideFromSupervisor":false,"archived":false}]};
+                                                            setCourses(inlineData.courses);
+                                                            alert('✅ Loaded sample data (3 courses for demo)');
+                                                        });
+                                                }
+                                            }}
+                                            className="px-4 py-2 bg-green-500 hover:bg-green-600 rounded-lg text-white text-sm font-medium transition-all shadow-md"
+                                        >
+                                            📥 Import SP2026 Data
+                                        </button>
+                                    )}
+
                                     {/* Export Buttons */}
                                     <button
                                         onClick={() => DataManager.exportToCSV(courses)}
