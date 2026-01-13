@@ -18,13 +18,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional Support on pause. College may update ACA program. Provided KnowBe4 guidance in Fall 2025.",
       "publicNotes": "On pause pending college-wide ACA updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -45,13 +56,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Course Rep uncomfortable with leading changes. Paused pending Dr. McNair-Williams updates. Aligned course structure provided via email.",
       "publicNotes": "On pause pending division updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -72,13 +94,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Tremendous progress! Internal review prep in progress. Modules 1-4 audited. Course Map construction began. Course Rep updating with Module titles. Constructing Practice Activities for HQCDP alignment.",
       "publicNotes": "Preparing for internal review - strong progress",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "In Progress" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "In Progress"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     },
     {
@@ -99,13 +132,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "On pause pending Dr. Pomeroy's conversation with Dean Gold. Course Rep unsure about 3rd-party textbook reliance. Student workload concerns on practice problems - low completion.",
       "publicNotes": "On pause pending dean conversation",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -126,13 +170,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Currently in redesign phase to eliminate 3rd-party textbook reliance. Will meet with Dr. Pomeroy to review updates. Will request Dean Fair approval before continuing.",
       "publicNotes": "Redesign phase - eliminating textbook dependency",
-      "status": "Anticipated/Scheduled",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -153,13 +208,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "In progress. Collaborating with Course Rep to review current Canvas course. Evaluating student engagement from last semester's new format. Ensuring measurability with skill-based experiences and academic expectations balance.",
       "publicNotes": "Active development with engagement analysis",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     },
     {
@@ -180,13 +246,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "In progress. Collaboration between Jennifer Fisher (GRD-242) and Andrew Norris (CSC-285 & CSC-289). Unique experiential learning sequencing integrated. Preparing all 3 courses for internal certification.",
       "publicNotes": "Preparing for internal certification - cross-program collaboration",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     },
     {
@@ -207,13 +284,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "In progress. Collaboration with GRD-242 and CSC-285. Unique experiential learning sequencing. Preparing for internal certification.",
       "publicNotes": "Preparing for internal certification",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     },
     {
@@ -226,7 +314,7 @@
       "complexity": "Medium",
       "cte": true,
       "stage": 1,
-      "microstage": 1.0,
+      "microstage": 1,
       "progress": 5,
       "totalModules": 10,
       "modulesCompleted": 0,
@@ -234,13 +322,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Dr. Pomeroy will email Dean Gallagher to prioritize FSE courses for instructional support.",
       "publicNotes": "Scheduled to begin - awaiting dean prioritization",
-      "status": "Anticipated/Scheduled",
-      "hideFromSupervisor": false,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Pending" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -253,7 +352,7 @@
       "complexity": "Medium",
       "cte": true,
       "stage": 1,
-      "microstage": 1.0,
+      "microstage": 1,
       "progress": 5,
       "totalModules": 10,
       "modulesCompleted": 0,
@@ -261,13 +360,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Work began Fall 2026 but was reprioritized due to instructor's Body Donation Program workload. Dr. Pomeroy emailing Dean Gallagher to prioritize.",
       "publicNotes": "Scheduled to resume - awaiting prioritization",
-      "status": "Anticipated/Scheduled",
-      "hideFromSupervisor": false,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Pending" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -280,7 +390,7 @@
       "complexity": "Medium",
       "cte": true,
       "stage": 1,
-      "microstage": 1.0,
+      "microstage": 1,
       "progress": 5,
       "totalModules": 10,
       "modulesCompleted": 0,
@@ -288,13 +398,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Dr. Pomeroy will email Dean Gallagher requesting FSE prioritization.",
       "publicNotes": "Scheduled - awaiting dean prioritization",
-      "status": "Anticipated/Scheduled",
-      "hideFromSupervisor": false,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Pending" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -315,13 +436,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "In progress. Currently working with Course Rep to prepare for internal review.",
       "publicNotes": "Preparing for internal review",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     },
     {
@@ -342,13 +474,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "In progress. Currently working with Course Rep to prepare for internal review.",
       "publicNotes": "Preparing for internal review",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     },
     {
@@ -369,13 +512,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "In progress. Currently working with Course Rep to prepare for internal review.",
       "publicNotes": "Preparing for internal review",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     },
     {
@@ -396,13 +550,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "In progress with Jennifer Fisher.",
       "publicNotes": "Active development",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -423,13 +588,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "In progress with Jennifer Fisher.",
       "publicNotes": "Active development",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -442,7 +618,7 @@
       "complexity": "High",
       "cte": true,
       "stage": 4,
-      "microstage": 4.0,
+      "microstage": 4,
       "progress": 68,
       "totalModules": 10,
       "modulesCompleted": 7,
@@ -450,13 +626,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Currently waiting on updates from Course Rep to prepare for internal review. Collaboration with CSC courses on experiential learning.",
       "publicNotes": "Awaiting updates for internal review prep",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     },
     {
@@ -477,13 +664,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional Support paused pending Dr. McNair-Williams updates.",
       "publicNotes": "On pause pending division updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -504,13 +702,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional Support paused pending Dr. McNair-Williams updates.",
       "publicNotes": "On pause pending division updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -522,7 +731,7 @@
       "courseRep": "Jessie Kiker",
       "complexity": "Medium",
       "cte": false,
-      "stage": "H",
+      "stage": 3,
       "microstage": 0,
       "progress": 15,
       "totalModules": 10,
@@ -531,13 +740,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Updated aligned course structure throughout. Course Rep uncomfortable leading changes. Paused pending Division Chair updates.",
       "publicNotes": "On pause pending division chair updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -549,7 +769,7 @@
       "courseRep": "Jessie Kiker",
       "complexity": "Medium",
       "cte": false,
-      "stage": "H",
+      "stage": 3,
       "microstage": 0,
       "progress": 15,
       "totalModules": 10,
@@ -558,13 +778,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Updated aligned course structure throughout. Course Rep uncomfortable leading changes. Paused pending Division Chair updates.",
       "publicNotes": "On pause pending division chair updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -585,13 +816,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional support paused until after Spring Plant Sale per Dean Gibson & Dr. Pomeroy.",
       "publicNotes": "On pause until after Spring Plant Sale",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Pending" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -612,13 +854,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional support paused until after Spring Plant Sale.",
       "publicNotes": "On pause until after Spring Plant Sale",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Pending" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -639,13 +892,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional Support on hold pending Dr. McNair-Williams updates.",
       "publicNotes": "On hold pending division updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -666,13 +930,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional Support paused pending Dr. McNair-Williams updates.",
       "publicNotes": "On pause pending division updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -693,13 +968,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "On hold. Dr. Pomeroy to meet with Dr. Harmon for priorities.",
       "publicNotes": "On hold - awaiting priority meeting",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -712,7 +998,7 @@
       "complexity": "Medium",
       "cte": true,
       "stage": 7,
-      "microstage": 7.0,
+      "microstage": 7,
       "progress": 100,
       "totalModules": 10,
       "modulesCompleted": 10,
@@ -720,13 +1006,24 @@
       "lastUpdated": "2025-12-15",
       "notes": "Internally Certified Fall 2025. Complete and ready for delivery.",
       "publicNotes": "Certified Fall 2025",
-      "status": "Internally Certified",
-      "hideFromSupervisor": false,
+      "status": "Certified",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     },
     {
@@ -747,13 +1044,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "On hold. Dr. Pomeroy to meet with Daniela Newland for priorities.",
       "publicNotes": "On hold - awaiting priority meeting",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -774,13 +1082,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional Support on hold pending Dr. McNair-Williams updates.",
       "publicNotes": "On hold pending division updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -793,7 +1112,7 @@
       "complexity": "Medium",
       "cte": false,
       "stage": 1,
-      "microstage": 1.0,
+      "microstage": 1,
       "progress": 5,
       "totalModules": 10,
       "modulesCompleted": 0,
@@ -801,13 +1120,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional Support to begin. Pending updates from Dr. McNair-Williams.",
       "publicNotes": "Scheduled to begin",
-      "status": "Anticipated/Scheduled",
-      "hideFromSupervisor": false,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -819,8 +1149,8 @@
       "courseRep": "Vernette Gilbreath",
       "complexity": "Medium",
       "cte": false,
-      "stage": 2,
-      "microstage": 2.0,
+      "stage": 1,
+      "microstage": 2,
       "progress": 20,
       "totalModules": 12,
       "modulesCompleted": 0,
@@ -828,13 +1158,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Will begin collaborating following census date. Teams meeting scheduled for 1-30-2026.",
       "publicNotes": "Starting soon - meeting scheduled 1/30",
-      "status": "Anticipated/Scheduled",
-      "hideFromSupervisor": false,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -855,13 +1196,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional Support on hold pending Dr. McNair-Williams updates.",
       "publicNotes": "On hold pending division updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -874,7 +1226,7 @@
       "complexity": "Medium",
       "cte": false,
       "stage": 2,
-      "microstage": 2.0,
+      "microstage": 2,
       "progress": 20,
       "totalModules": 10,
       "modulesCompleted": 0,
@@ -882,13 +1234,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Will resume collaborating following census date. Scheduled to email requesting meeting.",
       "publicNotes": "Resuming after census date",
-      "status": "Anticipated/Scheduled",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -909,13 +1272,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional Support on hold pending Dr. McNair-Williams updates. QM Staff Leader: Colleen Galan.",
       "publicNotes": "On hold pending division updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -936,13 +1310,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional Support on hold pending Dr. McNair-Williams updates.",
       "publicNotes": "On hold pending division updates",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -963,13 +1348,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional support paused until after Spring Plant Sale per Dean Gibson & Dr. Pomeroy.",
       "publicNotes": "On pause until after Spring Plant Sale",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Pending" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -990,13 +1386,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "In progress. Currently working on Canvas organization to prepare for internal review.",
       "publicNotes": "Preparing for internal review",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     },
     {
@@ -1017,13 +1424,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "Instructional support paused until after Spring Plant Sale per Dean Gibson & Dr. Pomeroy.",
       "publicNotes": "On pause until after Spring Plant Sale",
-      "status": "On Hold",
-      "hideFromSupervisor": true,
+      "status": "Planning Phase",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Pending" },
-        { "name": "Syllabus", "url": "", "status": "Pending" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Pending" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
       ]
     },
     {
@@ -1044,13 +1462,24 @@
       "lastUpdated": "2026-01-13",
       "notes": "In progress. Currently working on Canvas organization to prepare for internal review.",
       "publicNotes": "Preparing for internal review",
-      "status": "In Progress",
-      "hideFromSupervisor": false,
+      "status": "Active Development",
       "archived": false,
       "documents": [
-        { "name": "Course Map", "url": "", "status": "Received" },
-        { "name": "Syllabus", "url": "", "status": "Received" },
-        { "name": "HIDOC Sheet", "url": "", "status": "Received" }
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Received"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Received"
+        }
       ]
     }
   ],

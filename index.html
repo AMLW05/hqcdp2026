@@ -229,10 +229,7 @@
             // ==================== COMPUTED VALUES ====================
             const filteredCourses = useMemo(() => {
                 return courses.filter(course => {
-                    // In Supervisor View, hide courses marked as hideFromSupervisor
-                    if (viewMode === 'supervisor' && course.hideFromSupervisor) {
-                        return false;
-                    }
+                    // Show all courses in Supervisor View (no hiding)
 
                     // In Supervisor View, hide archived courses
                     if (viewMode === 'supervisor' && course.archived) {
@@ -256,7 +253,7 @@
             const stats = useMemo(() => {
                 // Filter courses based on view mode for stats calculation
                 const visibleCourses = viewMode === 'supervisor'
-                    ? courses.filter(c => !c.hideFromSupervisor && !c.archived)
+                    ? courses.filter(c => !c.archived)
                     : courses;
 
                 const total = visibleCourses.length;
