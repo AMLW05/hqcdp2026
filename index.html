@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HQCDP Dashboard - Course Development Tracker</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .stage-badge { font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; }
+        .admin-mode { border: 3px solid #f59e0b; }
+        .pulse-dot { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .timeline-bar { height: 24px; border-radius: 4px; position: relative; overflow: hidden; }
+        .timeline-progress { height: 100%; transition: width 0.5s ease; }
+        .kpi-large { font-size: 3rem; font-weight: 700; line-height: 1; }
+        .kpi-card { background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%); }
+        .edit-inline { border: 2px dashed transparent; padding: 2px 6px; border-radius: 4px; cursor: pointer; }
+        .edit-inline:hover { border-color: #3b82f6; background: #eff6ff; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useMemo, useCallback } = React;
+
+        // ==================== STAGE DEFINITIONS ====================
+        const STAGE_DEFINITIONS = {
+            0: { name: 'Not Started', color: '#9ca3af', icon: '📋', shortName: 'Not Started' },
+            1: { name: 'Planning', color: '#3b82f6', icon: '📐', shortName: 'Planning' },
+            2: { name: 'Foundation', color: '#eab308', icon: '🏗️', shortName: 'Foundation' },
+            3: { name: 'Active Build', color: '#f97316', icon: '🔨', shortName: 'Building' },
+            4: { name: 'Internal Review', color: '#a855f7', icon: '🔍', shortName: 'Review' },
+            5: { name: 'Refinement', color: '#6366f1', icon: '✨', shortName: 'Refinement' },
+            6: { name: 'Quality Assurance', color: '#ec4899', icon: '✅', shortName: 'QA' },
+            7: { name: 'Certified', color: '#10b981', icon: '🏆', shortName: 'Certified' },
+            'H': { name: 'On Hold', color: '#ef4444', icon: '⏸️', shortName: 'On Hold' },
+            'R': { name: 'Recertification', color: '#14b8a6', icon: '🔄', shortName: 'Recert' }
+        };
+
+        // ==================== DATA MANAGER ====================
+        const DataManager = {
+            STORAGE_KEY: 'hqcdp_courses_v2',
+            BACKUP_KEY: 'hqcdp_backup_v2',
+
+            load: () => {
+                try {
+                    const stored = localStorage.getItem(DataManager.STORAGE_KEY);
+                    if (stored) {
+                        const data = JSON.parse(stored);
+                        return Array.isArray(data.courses) ? data.courses : [];
+                    }
+                } catch (error) {
+                    console.error('Error loading data:', error);
+                }
+                return DataManager.getDefaultData();
+            },
+
+            save: (courses) => {
+                try {
+                    // Create backup before saving
+                    const current = localStorage.getItem(DataManager.STORAGE_KEY);
+                    if (current) {
+                        localStorage.setItem(DataManager.BACKUP_KEY, current);
+                    }
+
+                    const data = {
+                        courses: courses,
+                        lastUpdated: new Date().toISOString(),
+                        version: '2.0'
+                    };
+                    localStorage.setItem(DataManager.STORAGE_KEY, JSON.stringify(data));
+                    return true;
+                } catch (error) {
+                    console.error('Error saving data:', error);
+                    return false;
+                }
+            },
+
+            exportToJSON: (courses) => {
+                const data = {
+                    courses: courses,
+                    exportDate: new Date().toISOString(),
+                    version: '2.0'
+                };
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `hqcdp-data-${new Date().toISOString().split('T')[0]}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            },
+
+            exportToCSV: (courses) => {
+                const headers = ['Course ID', 'Title', 'Instructor', 'Department', 'Stage', 'Progress %',
+                                'CTE', 'Deadline', 'Total Modules', 'Completed Modules', 'Last Updated', 'Notes'];
+
+                const rows = courses.map(c => [
+                    c.id, c.title, c.instructor, c.department,
+                    STAGE_DEFINITIONS[c.stage]?.name || c.stage,
+                    c.progress, c.cte ? 'Yes' : 'No', c.deadline,
+                    c.totalModules || 0, c.modulesCompleted || 0,
+                    c.lastUpdated, c.notes || ''
+                ]);
+
+                const csvContent = [headers, ...rows]
+                    .map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(','))
+                    .join('\n');
+
+                const blob = new Blob([csvContent], { type: 'text/csv' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `hqcdp-export-${new Date().toISOString().split('T')[0]}.csv`;
+                a.click();
+                URL.revokeObjectURL(url);
+            },
+
+            getDefaultData: () => [
+                {
+                    id: 'BUS-115',
+                    title: 'Business Law I',
+                    instructor: 'Dr. Lewis',
+                    instructorEmail: 'lewis@ftcc.edu',
+                    department: 'Business',
+                    courseRep: 'Jane Smith',
+                    complexity: 'Medium',
+                    cte: true,
+                    stage: 2,
+                    microstage: 2.3,
+                    progress: 35,
+                    totalModules: 12,
+                    modulesCompleted: 4,
+                    deadline: '2025-12-15',
+                    lastUpdated: new Date().toISOString().split('T')[0],
+                    notes: 'Working on module 3 content',
+                    publicNotes: 'Foundation stage in progress',
+                    documents: [
+                        { name: 'Course Map', url: '', status: 'Received' },
+                        { name: 'Syllabus', url: '', status: 'Received' },
+                        { name: 'HIDOC Sheet', url: '', status: 'Pending' }
+                    ]
+                },
+                {
+                    id: 'CTS-285',
+                    title: 'Systems Analysis & Design',
+                    instructor: 'Andrew Norris',
+                    instructorEmail: 'norris@ftcc.edu',
+                    department: 'IT',
+                    courseRep: 'Mike Johnson',
+                    complexity: 'High',
+                    cte: true,
+                    stage: 3,
+                    microstage: 3.4,
+                    progress: 55,
+                    totalModules: 14,
+                    modulesCompleted: 8,
+                    deadline: '2026-01-30',
+                    lastUpdated: new Date().toISOString().split('T')[0],
+                    notes: 'On track for completion',
+                    publicNotes: 'Active development phase',
+                    documents: [
+                        { name: 'Course Map', url: '', status: 'Received' },
+                        { name: 'Syllabus', url: '', status: 'Received' },
+                        { name: 'HIDOC Sheet', url: '', status: 'Received' }
+                    ]
+                },
+                {
+                    id: 'REL-110',
+                    title: 'World Religions',
+                    instructor: 'Dr. Martinez',
+                    instructorEmail: 'martinez@ftcc.edu',
+                    department: 'Humanities',
+                    courseRep: 'Sarah Davis',
+                    complexity: 'Low',
+                    cte: false,
+                    stage: 7,
+                    microstage: 7.0,
+                    progress: 100,
+                    totalModules: 10,
+                    modulesCompleted: 10,
+                    deadline: '2025-08-30',
+                    lastUpdated: new Date().toISOString().split('T')[0],
+                    notes: 'Certified and ready for delivery',
+                    publicNotes: 'Certification complete',
+                    documents: [
+                        { name: 'Course Map', url: '', status: 'Received' },
+                        { name: 'Syllabus', url: '', status: 'Received' },
+                        { name: 'HIDOC Sheet', url: '', status: 'Received' }
+                    ]
+                }
+            ]
+        };
+
+        // ==================== MAIN APP COMPONENT ====================
+        const HQCDPApp = () => {
+            const [courses, setCourses] = useState([]);
+            const [viewMode, setViewMode] = useState('supervisor'); // 'supervisor' or 'admin'
+            const [searchTerm, setSearchTerm] = useState('');
+            const [filterStage, setFilterStage] = useState('all');
+            const [filterCTE, setFilterCTE] = useState('all');
+            const [selectedCourse, setSelectedCourse] = useState(null);
+            const [showAddForm, setShowAddForm] = useState(false);
+
+            // Load data on mount
+            useEffect(() => {
+                const loadedCourses = DataManager.load();
+                setCourses(loadedCourses);
+            }, []);
+
+            // Save data whenever courses change
+            useEffect(() => {
+                if (courses.length > 0) {
+                    DataManager.save(courses);
+                }
+            }, [courses]);
+
+            // ==================== COMPUTED VALUES ====================
+            const filteredCourses = useMemo(() => {
+                return courses.filter(course => {
+                    const matchesSearch = !searchTerm ||
+                        course.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        course.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        course.instructor?.toLowerCase().includes(searchTerm.toLowerCase());
+
+                    const matchesStage = filterStage === 'all' || course.stage === filterStage;
+                    const matchesCTE = filterCTE === 'all' ||
+                        (filterCTE === 'cte' && course.cte) ||
+                        (filterCTE === 'non-cte' && !course.cte);
+
+                    return matchesSearch && matchesStage && matchesCTE;
+                });
+            }, [courses, searchTerm, filterStage, filterCTE]);
+
+            const stats = useMemo(() => {
+                const total = courses.length;
+                const cteCount = courses.filter(c => c.cte).length;
+                const certified = courses.filter(c => c.stage === 7).length;
+                const atRisk = courses.filter(c => {
+                    const deadline = new Date(c.deadline);
+                    const today = new Date();
+                    return deadline < today && c.stage !== 7;
+                }).length;
+                const avgProgress = total > 0
+                    ? Math.round(courses.reduce((sum, c) => sum + (c.progress || 0), 0) / total)
+                    : 0;
+
+                const stageDistribution = {};
+                courses.forEach(c => {
+                    const stage = c.stage;
+                    stageDistribution[stage] = (stageDistribution[stage] || 0) + 1;
+                });
+
+                const activeCount = courses.filter(c => [2, 3, 4, 5].includes(c.stage)).length;
+
+                return { total, cteCount, certified, atRisk, avgProgress, stageDistribution, activeCount };
+            }, [courses]);
+
+            // ==================== CRUD OPERATIONS ====================
+            const addCourse = (courseData) => {
+                const newCourse = {
+                    ...courseData,
+                    id: courseData.id.toUpperCase(),
+                    lastUpdated: new Date().toISOString().split('T')[0],
+                    documents: [
+                        { name: 'Course Map', url: '', status: 'Pending' },
+                        { name: 'Syllabus', url: '', status: 'Pending' },
+                        { name: 'HIDOC Sheet', url: '', status: 'Pending' }
+                    ]
+                };
+                setCourses([...courses, newCourse]);
+                setShowAddForm(false);
+            };
+
+            const updateCourse = (courseId, updates) => {
+                setCourses(courses.map(c =>
+                    c.id === courseId
+                        ? { ...c, ...updates, lastUpdated: new Date().toISOString().split('T')[0] }
+                        : c
+                ));
+            };
+
+            const deleteCourse = (courseId) => {
+                if (confirm(`Delete course ${courseId}? This cannot be undone.`)) {
+                    setCourses(courses.filter(c => c.id !== courseId));
+                }
+            };
+
+            // ==================== RENDER MODE SELECTOR ====================
+            return (
+                <div className="min-h-screen bg-gray-50">
+                    {/* Header */}
+                    <header className="gradient-bg text-white shadow-lg">
+                        <div className="max-w-7xl mx-auto px-6 py-6">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h1 className="text-3xl font-bold">HQCDP Dashboard</h1>
+                                    <p className="text-blue-100 mt-1">High-Quality Course Development Program</p>
+                                </div>
+
+                                <div className="flex items-center gap-4">
+                                    {/* Mode Toggle */}
+                                    <div className="flex bg-white/20 rounded-lg p-1">
+                                        <button
+                                            onClick={() => setViewMode('supervisor')}
+                                            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                                                viewMode === 'supervisor'
+                                                    ? 'bg-white text-purple-600 shadow-md'
+                                                    : 'text-white hover:bg-white/10'
+                                            }`}
+                                        >
+                                            👁️ Supervisor View
+                                        </button>
+                                        <button
+                                            onClick={() => setViewMode('admin')}
+                                            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                                                viewMode === 'admin'
+                                                    ? 'bg-white text-purple-600 shadow-md'
+                                                    : 'text-white hover:bg-white/10'
+                                            }`}
+                                        >
+                                            ⚙️ Admin Mode
+                                        </button>
+                                    </div>
+
+                                    {/* Export Buttons */}
+                                    <button
+                                        onClick={() => DataManager.exportToCSV(courses)}
+                                        className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-white text-sm font-medium transition-all"
+                                    >
+                                        📊 Export CSV
+                                    </button>
+                                    <button
+                                        onClick={() => DataManager.exportToJSON(courses)}
+                                        className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-white text-sm font-medium transition-all"
+                                    >
+                                        💾 Export JSON
+                                    </button>
+                                </div>
+                            </div>
+
+                            {viewMode === 'admin' && (
+                                <div className="mt-4 bg-amber-500 text-white px-4 py-2 rounded-lg flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-white rounded-full pulse-dot"></span>
+                                    <span className="font-medium">Admin Mode Active - Full editing enabled</span>
+                                </div>
+                            )}
+                        </div>
+                    </header>
+
+                    {/* Main Content */}
+                    <main className="max-w-7xl mx-auto px-6 py-8">
+                        {viewMode === 'supervisor' ? (
+                            <SupervisorView
+                                courses={filteredCourses}
+                                stats={stats}
+                                searchTerm={searchTerm}
+                                setSearchTerm={setSearchTerm}
+                                filterStage={filterStage}
+                                setFilterStage={setFilterStage}
+                                filterCTE={filterCTE}
+                                setFilterCTE={setFilterCTE}
+                            />
+                        ) : (
+                            <AdminView
+                                courses={filteredCourses}
+                                allCourses={courses}
+                                stats={stats}
+                                searchTerm={searchTerm}
+                                setSearchTerm={setSearchTerm}
+                                filterStage={filterStage}
+                                setFilterStage={setFilterStage}
+                                filterCTE={filterCTE}
+                                setFilterCTE={setFilterCTE}
+                                updateCourse={updateCourse}
+                                deleteCourse={deleteCourse}
+                                addCourse={addCourse}
+                                showAddForm={showAddForm}
+                                setShowAddForm={setShowAddForm}
+                            />
+                        )}
+                    </main>
+                </div>
+            );
+        };
+
+        // ==================== SUPERVISOR VIEW (BOSS-FACING) ====================
+        const SupervisorView = ({ courses, stats, searchTerm, setSearchTerm, filterStage, setFilterStage, filterCTE, setFilterCTE }) => {
+            return (
+                <div className="space-y-6">
+                    {/* KPI Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                        <KPICard title="Total Courses" value={stats.total} icon="📚" color="blue" />
+                        <KPICard title="CTE Courses" value={stats.cteCount} icon="🏆" color="amber" />
+                        <KPICard title="Certified" value={stats.certified} icon="✅" color="green" />
+                        <KPICard title="At Risk" value={stats.atRisk} icon="⚠️" color="red" />
+                        <KPICard title="Avg Progress" value={`${stats.avgProgress}%`} icon="📈" color="purple" />
+                    </div>
+
+                    {/* Stage Distribution */}
+                    <div className="bg-white rounded-xl shadow-md p-6">
+                        <h2 className="text-xl font-bold text-gray-900 mb-4">Pipeline Status</h2>
+                        <div className="space-y-3">
+                            {Object.entries(stats.stageDistribution).sort((a, b) => {
+                                if (typeof a[0] === 'string') return 1;
+                                if (typeof b[0] === 'string') return -1;
+                                return a[0] - b[0];
+                            }).map(([stage, count]) => {
+                                const stageDef = STAGE_DEFINITIONS[stage];
+                                const percentage = (count / stats.total) * 100;
+                                return (
+                                    <div key={stage} className="flex items-center gap-4">
+                                        <div className="w-32 text-sm font-medium text-gray-700 flex items-center gap-2">
+                                            <span>{stageDef.icon}</span>
+                                            <span>{stageDef.shortName}</span>
+                                        </div>
+                                        <div className="flex-1 bg-gray-200 rounded-full h-8 relative overflow-hidden">
+                                            <div
+                                                className="h-full flex items-center justify-end pr-3 text-white text-sm font-medium transition-all duration-500"
+                                                style={{
+                                                    width: `${percentage}%`,
+                                                    backgroundColor: stageDef.color,
+                                                    minWidth: count > 0 ? '40px' : '0'
+                                                }}
+                                            >
+                                                {count > 0 && count}
+                                            </div>
+                                        </div>
+                                        <div className="w-16 text-right text-sm font-medium text-gray-600">
+                                            {percentage.toFixed(0)}%
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* Filters */}
+                    <div className="bg-white rounded-xl shadow-md p-6">
+                        <div className="flex flex-wrap gap-4 items-center">
+                            <div className="flex-1 min-w-[300px]">
+                                <input
+                                    type="text"
+                                    placeholder="🔍 Search courses..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                />
+                            </div>
+                            <select
+                                value={filterStage}
+                                onChange={(e) => setFilterStage(e.target.value === 'all' ? 'all' : parseInt(e.target.value))}
+                                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                            >
+                                <option value="all">All Stages</option>
+                                {Object.entries(STAGE_DEFINITIONS).map(([key, val]) => (
+                                    <option key={key} value={key}>{val.icon} {val.name}</option>
+                                ))}
+                            </select>
+                            <select
+                                value={filterCTE}
+                                onChange={(e) => setFilterCTE(e.target.value)}
+                                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                            >
+                                <option value="all">All Types</option>
+                                <option value="cte">CTE Only</option>
+                                <option value="non-cte">Non-CTE Only</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    {/* Course Timeline */}
+                    <CourseTimeline courses={courses} />
+                </div>
+            );
+        };
+
+        // ==================== KPI CARD COMPONENT ====================
+        const KPICard = ({ title, value, icon, color }) => {
+            const colorClasses = {
+                blue: 'from-blue-500 to-blue-600',
+                amber: 'from-amber-500 to-amber-600',
+                green: 'from-green-500 to-green-600',
+                red: 'from-red-500 to-red-600',
+                purple: 'from-purple-500 to-purple-600'
+            };
+
+            return (
+                <div className={`bg-gradient-to-br ${colorClasses[color]} rounded-xl shadow-lg p-6 text-white card-hover`}>
+                    <div className="flex items-center justify-between mb-2">
+                        <span className="text-3xl">{icon}</span>
+                    </div>
+                    <div className="kpi-large mb-1">{value}</div>
+                    <div className="text-sm opacity-90 font-medium">{title}</div>
+                </div>
+            );
+        };
+
+        // ==================== COURSE TIMELINE ====================
+        const CourseTimeline = ({ courses }) => {
+            const sortedCourses = useMemo(() => {
+                return [...courses]
+                    .filter(c => c.stage !== 7)
+                    .sort((a, b) => new Date(a.deadline) - new Date(b.deadline))
+                    .slice(0, 10);
+            }, [courses]);
+
+            return (
+                <div className="bg-white rounded-xl shadow-md p-6">
+                    <h2 className="text-xl font-bold text-gray-900 mb-4">Upcoming Deadlines</h2>
+                    <div className="space-y-4">
+                        {sortedCourses.length === 0 ? (
+                            <div className="text-center py-8 text-gray-500">
+                                <div className="text-4xl mb-2">🎉</div>
+                                <p>All courses are on track or certified!</p>
+                            </div>
+                        ) : (
+                            sortedCourses.map(course => {
+                                const stageDef = STAGE_DEFINITIONS[course.stage];
+                                const deadline = new Date(course.deadline);
+                                const today = new Date();
+                                const isOverdue = deadline < today;
+                                const daysUntil = Math.ceil((deadline - today) / (1000 * 60 * 60 * 24));
+
+                                return (
+                                    <div key={course.id} className="border-l-4 pl-4 py-2" style={{ borderColor: stageDef.color }}>
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex-1">
+                                                <div className="flex items-center gap-3">
+                                                    <span className="font-bold text-gray-900">{course.id}</span>
+                                                    <span className="text-gray-700">{course.title}</span>
+                                                    {course.cte && (
+                                                        <span className="px-2 py-0.5 bg-amber-100 text-amber-800 text-xs rounded-full font-medium">
+                                                            CTE
+                                                        </span>
+                                                    )}
+                                                </div>
+                                                <div className="flex items-center gap-4 mt-2 text-sm">
+                                                    <span className="text-gray-600">{course.instructor}</span>
+                                                    <span className="stage-badge" style={{
+                                                        backgroundColor: `${stageDef.color}20`,
+                                                        color: stageDef.color
+                                                    }}>
+                                                        {stageDef.icon} {stageDef.shortName}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="text-right">
+                                                <div className={`font-bold ${isOverdue ? 'text-red-600' : 'text-gray-900'}`}>
+                                                    {deadline.toLocaleDateString()}
+                                                </div>
+                                                <div className={`text-sm ${isOverdue ? 'text-red-600' : 'text-gray-600'}`}>
+                                                    {isOverdue ? `${Math.abs(daysUntil)} days overdue` : `${daysUntil} days`}
+                                                </div>
+                                                <div className="mt-2 w-32 bg-gray-200 rounded-full h-2">
+                                                    <div
+                                                        className="h-2 rounded-full transition-all"
+                                                        style={{
+                                                            width: `${course.progress}%`,
+                                                            backgroundColor: stageDef.color
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })
+                        )}
+                    </div>
+                </div>
+            );
+        };
+
+        // ==================== ADMIN VIEW ====================
+        const AdminView = ({
+            courses, allCourses, stats, searchTerm, setSearchTerm,
+            filterStage, setFilterStage, filterCTE, setFilterCTE,
+            updateCourse, deleteCourse, addCourse, showAddForm, setShowAddForm
+        }) => {
+            return (
+                <div className="space-y-6">
+                    {/* Quick Stats */}
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div className="bg-white rounded-lg shadow p-4">
+                            <div className="text-2xl font-bold text-gray-900">{stats.total}</div>
+                            <div className="text-sm text-gray-600">Total Courses</div>
+                        </div>
+                        <div className="bg-white rounded-lg shadow p-4">
+                            <div className="text-2xl font-bold text-amber-600">{stats.activeCount}</div>
+                            <div className="text-sm text-gray-600">Active Development</div>
+                        </div>
+                        <div className="bg-white rounded-lg shadow p-4">
+                            <div className="text-2xl font-bold text-green-600">{stats.certified}</div>
+                            <div className="text-sm text-gray-600">Certified</div>
+                        </div>
+                        <div className="bg-white rounded-lg shadow p-4">
+                            <div className="text-2xl font-bold text-red-600">{stats.atRisk}</div>
+                            <div className="text-sm text-gray-600">At Risk</div>
+                        </div>
+                    </div>
+
+                    {/* Filters and Add Button */}
+                    <div className="bg-white rounded-xl shadow-md p-6">
+                        <div className="flex flex-wrap gap-4 items-center justify-between">
+                            <div className="flex flex-wrap gap-4 items-center flex-1">
+                                <input
+                                    type="text"
+                                    placeholder="🔍 Search courses..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 min-w-[300px]"
+                                />
+                                <select
+                                    value={filterStage}
+                                    onChange={(e) => setFilterStage(e.target.value === 'all' ? 'all' : parseInt(e.target.value))}
+                                    className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                >
+                                    <option value="all">All Stages</option>
+                                    {Object.entries(STAGE_DEFINITIONS).map(([key, val]) => (
+                                        <option key={key} value={key}>{val.icon} {val.name}</option>
+                                    ))}
+                                </select>
+                                <select
+                                    value={filterCTE}
+                                    onChange={(e) => setFilterCTE(e.target.value)}
+                                    className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                >
+                                    <option value="all">All Types</option>
+                                    <option value="cte">CTE Only</option>
+                                    <option value="non-cte">Non-CTE Only</option>
+                                </select>
+                            </div>
+                            <button
+                                onClick={() => setShowAddForm(!showAddForm)}
+                                className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-all shadow-md"
+                            >
+                                {showAddForm ? '✕ Cancel' : '➕ Add Course'}
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Add Course Form */}
+                    {showAddForm && <AddCourseForm onAdd={addCourse} onCancel={() => setShowAddForm(false)} />}
+
+                    {/* Course List */}
+                    <div className="space-y-4">
+                        {courses.map(course => (
+                            <AdminCourseCard
+                                key={course.id}
+                                course={course}
+                                onUpdate={updateCourse}
+                                onDelete={deleteCourse}
+                            />
+                        ))}
+                        {courses.length === 0 && (
+                            <div className="bg-white rounded-xl shadow-md p-12 text-center">
+                                <div className="text-6xl mb-4">🔍</div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">No courses found</h3>
+                                <p className="text-gray-600">Try adjusting your filters or add a new course.</p>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
+        };
+
+        // ==================== ADD COURSE FORM ====================
+        const AddCourseForm = ({ onAdd, onCancel }) => {
+            const [formData, setFormData] = useState({
+                id: '',
+                title: '',
+                instructor: '',
+                instructorEmail: '',
+                department: '',
+                courseRep: '',
+                complexity: 'Medium',
+                cte: true,
+                stage: 0,
+                microstage: 0.0,
+                progress: 0,
+                totalModules: 0,
+                modulesCompleted: 0,
+                deadline: new Date(Date.now() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+                notes: '',
+                publicNotes: ''
+            });
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                if (!formData.id.trim()) {
+                    alert('Course ID is required');
+                    return;
+                }
+                onAdd(formData);
+            };
+
+            return (
+                <div className="bg-white rounded-xl shadow-md p-6 border-2 border-purple-500">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">Add New Course</h3>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Course ID *</label>
+                                <input
+                                    type="text"
+                                    value={formData.id}
+                                    onChange={(e) => setFormData({...formData, id: e.target.value.toUpperCase()})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                    placeholder="e.g., BUS-115"
+                                    required
+                                />
+                            </div>
+                            <div className="md:col-span-2">
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Course Title</label>
+                                <input
+                                    type="text"
+                                    value={formData.title}
+                                    onChange={(e) => setFormData({...formData, title: e.target.value})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                    placeholder="Enter course title"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Instructor</label>
+                                <input
+                                    type="text"
+                                    value={formData.instructor}
+                                    onChange={(e) => setFormData({...formData, instructor: e.target.value})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input
+                                    type="email"
+                                    value={formData.instructorEmail}
+                                    onChange={(e) => setFormData({...formData, instructorEmail: e.target.value})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Department</label>
+                                <input
+                                    type="text"
+                                    value={formData.department}
+                                    onChange={(e) => setFormData({...formData, department: e.target.value})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Complexity</label>
+                                <select
+                                    value={formData.complexity}
+                                    onChange={(e) => setFormData({...formData, complexity: e.target.value})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                >
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">CTE Status</label>
+                                <select
+                                    value={formData.cte}
+                                    onChange={(e) => setFormData({...formData, cte: e.target.value === 'true'})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                >
+                                    <option value="true">CTE</option>
+                                    <option value="false">Non-CTE</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Stage</label>
+                                <select
+                                    value={formData.stage}
+                                    onChange={(e) => setFormData({...formData, stage: isNaN(e.target.value) ? e.target.value : parseInt(e.target.value)})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                >
+                                    {Object.entries(STAGE_DEFINITIONS).map(([key, val]) => (
+                                        <option key={key} value={key}>{val.icon} {val.name}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Deadline</label>
+                                <input
+                                    type="date"
+                                    value={formData.deadline}
+                                    onChange={(e) => setFormData({...formData, deadline: e.target.value})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Total Modules</label>
+                                <input
+                                    type="number"
+                                    min="0"
+                                    value={formData.totalModules}
+                                    onChange={(e) => setFormData({...formData, totalModules: parseInt(e.target.value) || 0})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Progress %</label>
+                                <input
+                                    type="number"
+                                    min="0"
+                                    max="100"
+                                    value={formData.progress}
+                                    onChange={(e) => setFormData({...formData, progress: parseInt(e.target.value) || 0})}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Notes (Private)</label>
+                            <textarea
+                                value={formData.notes}
+                                onChange={(e) => setFormData({...formData, notes: e.target.value})}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                rows="3"
+                            />
+                        </div>
+
+                        <div className="flex gap-4">
+                            <button
+                                type="submit"
+                                className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-all"
+                            >
+                                ✅ Add Course
+                            </button>
+                            <button
+                                type="button"
+                                onClick={onCancel}
+                                className="px-6 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-lg font-medium transition-all"
+                            >
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            );
+        };
+
+        // ==================== ADMIN COURSE CARD ====================
+        const AdminCourseCard = ({ course, onUpdate, onDelete }) => {
+            const [expanded, setExpanded] = useState(false);
+            const [editing, setEditing] = useState(null);
+            const stageDef = STAGE_DEFINITIONS[course.stage];
+
+            const updateField = (field, value) => {
+                onUpdate(course.id, { [field]: value });
+                setEditing(null);
+            };
+
+            return (
+                <div className="bg-white rounded-xl shadow-md overflow-hidden border-l-4" style={{ borderColor: stageDef.color }}>
+                    <div className="p-6">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-4 flex-1">
+                                <div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-lg font-bold text-gray-900">{course.id}</span>
+                                        {course.cte && (
+                                            <span className="px-2 py-0.5 bg-amber-100 text-amber-800 text-xs rounded-full font-medium">
+                                                CTE
+                                            </span>
+                                        )}
+                                    </div>
+                                    <div className="text-gray-700 mt-1">{course.title}</div>
+                                    <div className="text-sm text-gray-600 mt-1">
+                                        {course.instructor} • {course.department}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-4">
+                                <div className="text-right">
+                                    <div className="stage-badge" style={{
+                                        backgroundColor: `${stageDef.color}20`,
+                                        color: stageDef.color
+                                    }}>
+                                        {stageDef.icon} {stageDef.name}
+                                    </div>
+                                    <div className="mt-2 flex items-center gap-2">
+                                        <div className="w-32 bg-gray-200 rounded-full h-2">
+                                            <div
+                                                className="h-2 rounded-full transition-all"
+                                                style={{
+                                                    width: `${course.progress}%`,
+                                                    backgroundColor: stageDef.color
+                                                }}
+                                            />
+                                        </div>
+                                        <span className="text-sm font-medium text-gray-700">{course.progress}%</span>
+                                    </div>
+                                </div>
+
+                                <button
+                                    onClick={() => setExpanded(!expanded)}
+                                    className="p-2 hover:bg-gray-100 rounded-lg transition-all"
+                                >
+                                    <svg
+                                        className={`w-6 h-6 transition-transform ${expanded ? 'rotate-180' : ''}`}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        {expanded && (
+                            <div className="mt-6 pt-6 border-t space-y-4">
+                                <div className="grid grid-cols-2 gap-4">
+                                    <EditableField
+                                        label="Stage"
+                                        value={course.stage}
+                                        type="select"
+                                        options={Object.entries(STAGE_DEFINITIONS).map(([key, val]) => ({
+                                            value: key,
+                                            label: `${val.icon} ${val.name}`
+                                        }))}
+                                        onSave={(val) => updateField('stage', isNaN(val) ? val : parseInt(val))}
+                                    />
+                                    <EditableField
+                                        label="Progress %"
+                                        value={course.progress}
+                                        type="number"
+                                        onSave={(val) => updateField('progress', parseInt(val))}
+                                    />
+                                    <EditableField
+                                        label="Deadline"
+                                        value={course.deadline}
+                                        type="date"
+                                        onSave={(val) => updateField('deadline', val)}
+                                    />
+                                    <EditableField
+                                        label="Total Modules"
+                                        value={course.totalModules || 0}
+                                        type="number"
+                                        onSave={(val) => updateField('totalModules', parseInt(val))}
+                                    />
+                                    <EditableField
+                                        label="Modules Completed"
+                                        value={course.modulesCompleted || 0}
+                                        type="number"
+                                        onSave={(val) => updateField('modulesCompleted', parseInt(val))}
+                                    />
+                                    <EditableField
+                                        label="Complexity"
+                                        value={course.complexity}
+                                        type="select"
+                                        options={[
+                                            { value: 'Low', label: 'Low' },
+                                            { value: 'Medium', label: 'Medium' },
+                                            { value: 'High', label: 'High' }
+                                        ]}
+                                        onSave={(val) => updateField('complexity', val)}
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">Private Notes</label>
+                                    <textarea
+                                        value={course.notes || ''}
+                                        onChange={(e) => onUpdate(course.id, { notes: e.target.value })}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                        rows="3"
+                                    />
+                                </div>
+
+                                <div className="flex gap-2">
+                                    <button
+                                        onClick={() => onDelete(course.id)}
+                                        className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-medium transition-all"
+                                    >
+                                        🗑️ Delete Course
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
+        };
+
+        // ==================== EDITABLE FIELD ====================
+        const EditableField = ({ label, value, type = 'text', options = [], onSave }) => {
+            const [editing, setEditing] = useState(false);
+            const [tempValue, setTempValue] = useState(value);
+
+            const handleSave = () => {
+                onSave(tempValue);
+                setEditing(false);
+            };
+
+            if (!editing) {
+                return (
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
+                        <div
+                            onClick={() => { setTempValue(value); setEditing(true); }}
+                            className="px-3 py-2 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 hover:border-blue-300 transition-all"
+                        >
+                            {type === 'select'
+                                ? options.find(opt => opt.value == value)?.label || value
+                                : value}
+                        </div>
+                    </div>
+                );
+            }
+
+            return (
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
+                    <div className="flex gap-2">
+                        {type === 'select' ? (
+                            <select
+                                value={tempValue}
+                                onChange={(e) => setTempValue(e.target.value)}
+                                className="flex-1 px-3 py-2 border border-blue-500 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                autoFocus
+                            >
+                                {options.map(opt => (
+                                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                                ))}
+                            </select>
+                        ) : (
+                            <input
+                                type={type}
+                                value={tempValue}
+                                onChange={(e) => setTempValue(e.target.value)}
+                                className="flex-1 px-3 py-2 border border-blue-500 rounded-lg focus:ring-2 focus:ring-purple-500"
+                                autoFocus
+                            />
+                        )}
+                        <button
+                            onClick={handleSave}
+                            className="px-3 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm"
+                        >
+                            ✓
+                        </button>
+                        <button
+                            onClick={() => setEditing(false)}
+                            className="px-3 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-lg text-sm"
+                        >
+                            ✕
+                        </button>
+                    </div>
+                </div>
+            );
+        };
+
+        // ==================== RENDER APP ====================
+        ReactDOM.render(<HQCDPApp />, document.getElementById('root'));
+    </script>
+</body>
+</html>
