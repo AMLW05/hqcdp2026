@@ -454,46 +454,61 @@
         };
 
         // ==================== SUPERVISOR VIEW (BOSS-FACING) ====================
-        const SupervisorView = ({ courses, stats, searchTerm, setSearchTerm, filterStage, setFilterStage, filterCTE, setFilterCTE }) => {
-            // Calculate active development (stages 2-5)
-            const activeDevelopment = courses.filter(c => [2, 3, 4, 5].includes(c.stage)).length;
-            const nonCteCount = stats.total - stats.cteCount;
-            const onTrackPercent = stats.atRisk === 0 ? 100 : Math.round(((stats.total - stats.atRisk) / stats.total) * 100);
+        const SupervisorView = ({ courses, stats }) => {
+            const cteCourses = courses.filter(c => c.cte).sort((a, b) => a.id.localeCompare(b.id));
+            const nonCteCourses = courses.filter(c => !c.cte).sort((a, b) => a.id.localeCompare(b.id));
 
             return (
                 <div className="space-y-6">
-                    {/* Simplified KPI Cards for Boss */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                        <KPICard title="Certified" value={stats.certified} icon="✅" color="green" />
-                        <KPICard title="Active Development" value={activeDevelopment} icon="🔨" color="orange" />
-                        <KPICard title="CTE Courses" value={stats.cteCount} icon="🏆" color="amber" />
-                        <KPICard title="Non-CTE Courses" value={nonCteCount} icon="📚" color="blue" />
-                        <KPICard title="On Track" value={`${onTrackPercent}%`} icon="✓" color="purple" />
-                    </div>
-
-                    {/* Department/Division Breakdown */}
-                    <div className="bg-white rounded-xl shadow-md p-6">
-                        <h2 className="text-xl font-bold text-gray-900 mb-4">Courses by Department</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {(() => {
-                                const deptCounts = {};
-                                courses.forEach(c => {
-                                    const dept = c.department || 'Other';
-                                    deptCounts[dept] = (deptCounts[dept] || 0) + 1;
-                                });
-                                return Object.entries(deptCounts)
-                                    .sort((a, b) => b[1] - a[1])
-                                    .map(([dept, count]) => (
-                                        <div key={dept} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                            <span className="font-medium text-gray-700">{dept}</span>
-                                            <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-bold">
-                                                {count}
-                                            </span>
-                                        </div>
-                                    ));
-                            })()}
+                    {/* Summary Stats */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl shadow-lg p-6 text-white">
+                            <div className="text-4xl font-bold mb-2">{stats.total}</div>
+                            <div className="text-sm opacity-90 font-medium">Total Courses</div>
+                        </div>
+                        <div className="bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl shadow-lg p-6 text-white">
+                            <div className="text-4xl font-bold mb-2">{stats.cteCount}</div>
+                            <div className="text-sm opacity-90 font-medium">CTE Courses</div>
+                        </div>
+                        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg p-6 text-white">
+                            <div className="text-4xl font-bold mb-2">{stats.total - stats.cteCount}</div>
+                            <div className="text-sm opacity-90 font-medium">Non-CTE Courses</div>
                         </div>
                     </div>
+
+                    {/* CTE Courses */}
+                    <div className="bg-white rounded-xl shadow-md p-6">
+                        <h2 className="text-2xl font-bold text-amber-700 mb-4 flex items-center gap-2">
+                            🏆 CTE Courses ({cteCourses.length})
+                        </h2>
+                        <div className="space-y-2">
+                            {cteCourses.map(course => (
+                                <div key={course.id} className="flex items-center gap-4 p-3 hover:bg-amber-50 rounded-lg transition-colors">
+                                    <span className="font-bold text-amber-900 min-w-[100px]">{course.id}</span>
+                                    <span className="flex-1 text-gray-900">{course.title}</span>
+                                    <span className="text-gray-600 min-w-[150px] text-right">{course.instructor}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Non-CTE Courses */}
+                    {nonCteCourses.length > 0 && (
+                        <div className="bg-white rounded-xl shadow-md p-6">
+                            <h2 className="text-2xl font-bold text-blue-700 mb-4 flex items-center gap-2">
+                                📚 Non-CTE Courses ({nonCteCourses.length})
+                            </h2>
+                            <div className="space-y-2">
+                                {nonCteCourses.map(course => (
+                                    <div key={course.id} className="flex items-center gap-4 p-3 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <span className="font-bold text-blue-900 min-w-[100px]">{course.id}</span>
+                                        <span className="flex-1 text-gray-900">{course.title}</span>
+                                        <span className="text-gray-600 min-w-[150px] text-right">{course.instructor}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             );
         };
