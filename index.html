@@ -442,15 +442,20 @@
 
         // ==================== SUPERVISOR VIEW (BOSS-FACING) ====================
         const SupervisorView = ({ courses, stats, searchTerm, setSearchTerm, filterStage, setFilterStage, filterCTE, setFilterCTE }) => {
+            // Calculate active development (stages 2-5)
+            const activeDevelopment = courses.filter(c => [2, 3, 4, 5].includes(c.stage)).length;
+            const nonCteCount = stats.total - stats.cteCount;
+            const onTrackPercent = stats.atRisk === 0 ? 100 : Math.round(((stats.total - stats.atRisk) / stats.total) * 100);
+
             return (
                 <div className="space-y-6">
-                    {/* KPI Cards */}
+                    {/* Simplified KPI Cards for Boss */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                        <KPICard title="Total Courses" value={stats.total} icon="📚" color="blue" />
-                        <KPICard title="CTE Courses" value={stats.cteCount} icon="🏆" color="amber" />
                         <KPICard title="Certified" value={stats.certified} icon="✅" color="green" />
-                        <KPICard title="At Risk" value={stats.atRisk} icon="⚠️" color="red" />
-                        <KPICard title="Avg Progress" value={`${stats.avgProgress}%`} icon="📈" color="purple" />
+                        <KPICard title="Active Development" value={activeDevelopment} icon="🔨" color="orange" />
+                        <KPICard title="CTE Courses" value={stats.cteCount} icon="🏆" color="amber" />
+                        <KPICard title="Non-CTE Courses" value={nonCteCount} icon="📚" color="blue" />
+                        <KPICard title="On Track" value={`${onTrackPercent}%`} icon="✓" color="purple" />
                     </div>
 
                     {/* Stage Distribution */}
@@ -488,6 +493,30 @@
                                     </div>
                                 );
                             })}
+                        </div>
+                    </div>
+
+                    {/* Department/Division Breakdown */}
+                    <div className="bg-white rounded-xl shadow-md p-6">
+                        <h2 className="text-xl font-bold text-gray-900 mb-4">Courses by Department</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {(() => {
+                                const deptCounts = {};
+                                courses.forEach(c => {
+                                    const dept = c.department || 'Other';
+                                    deptCounts[dept] = (deptCounts[dept] || 0) + 1;
+                                });
+                                return Object.entries(deptCounts)
+                                    .sort((a, b) => b[1] - a[1])
+                                    .map(([dept, count]) => (
+                                        <div key={dept} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                            <span className="font-medium text-gray-700">{dept}</span>
+                                            <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-bold">
+                                                {count}
+                                            </span>
+                                        </div>
+                                    ));
+                            })()}
                         </div>
                     </div>
 
