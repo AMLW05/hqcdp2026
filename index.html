@@ -229,6 +229,16 @@
             // ==================== COMPUTED VALUES ====================
             const filteredCourses = useMemo(() => {
                 return courses.filter(course => {
+                    // In Supervisor View, hide courses marked as hideFromSupervisor
+                    if (viewMode === 'supervisor' && course.hideFromSupervisor) {
+                        return false;
+                    }
+
+                    // In Supervisor View, hide archived courses
+                    if (viewMode === 'supervisor' && course.archived) {
+                        return false;
+                    }
+
                     const matchesSearch = !searchTerm ||
                         course.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
                         course.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -241,31 +251,36 @@
 
                     return matchesSearch && matchesStage && matchesCTE;
                 });
-            }, [courses, searchTerm, filterStage, filterCTE]);
+            }, [courses, searchTerm, filterStage, filterCTE, viewMode]);
 
             const stats = useMemo(() => {
-                const total = courses.length;
-                const cteCount = courses.filter(c => c.cte).length;
-                const certified = courses.filter(c => c.stage === 7).length;
-                const atRisk = courses.filter(c => {
+                // Filter courses based on view mode for stats calculation
+                const visibleCourses = viewMode === 'supervisor'
+                    ? courses.filter(c => !c.hideFromSupervisor && !c.archived)
+                    : courses;
+
+                const total = visibleCourses.length;
+                const cteCount = visibleCourses.filter(c => c.cte).length;
+                const certified = visibleCourses.filter(c => c.stage === 7).length;
+                const atRisk = visibleCourses.filter(c => {
                     const deadline = new Date(c.deadline);
                     const today = new Date();
-                    return deadline < today && c.stage !== 7;
+                    return deadline < today && c.stage !== 7 && c.stage !== 'H';
                 }).length;
                 const avgProgress = total > 0
-                    ? Math.round(courses.reduce((sum, c) => sum + (c.progress || 0), 0) / total)
+                    ? Math.round(visibleCourses.reduce((sum, c) => sum + (c.progress || 0), 0) / total)
                     : 0;
 
                 const stageDistribution = {};
-                courses.forEach(c => {
+                visibleCourses.forEach(c => {
                     const stage = c.stage;
                     stageDistribution[stage] = (stageDistribution[stage] || 0) + 1;
                 });
 
-                const activeCount = courses.filter(c => [2, 3, 4, 5].includes(c.stage)).length;
+                const activeCount = visibleCourses.filter(c => [2, 3, 4, 5].includes(c.stage)).length;
 
                 return { total, cteCount, certified, atRisk, avgProgress, stageDistribution, activeCount };
-            }, [courses]);
+            }, [courses, viewMode]);
 
             // ==================== CRUD OPERATIONS ====================
             const addCourse = (courseData) => {
@@ -273,6 +288,9 @@
                     ...courseData,
                     id: courseData.id.toUpperCase(),
                     lastUpdated: new Date().toISOString().split('T')[0],
+                    hideFromSupervisor: courseData.hideFromSupervisor || false,
+                    archived: courseData.archived || false,
+                    status: courseData.status || 'In Progress',
                     documents: [
                         { name: 'Course Map', url: '', status: 'Pending' },
                         { name: 'Syllabus', url: '', status: 'Pending' },
