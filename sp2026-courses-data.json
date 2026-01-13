@@ -1,84 +1,8 @@
 {
   "courses": [
     {
-      "id": "ACA-120",
-      "title": "Career Assessment",
-      "instructor": "Tim French",
-      "instructorEmail": "tfrench@ftcc.edu",
-      "department": "Academic Skills",
-      "courseRep": "Tim French",
-      "complexity": "Medium",
-      "cte": true,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 8,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-15",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional Support on pause. College may update ACA program. Provided KnowBe4 guidance in Fall 2025.",
-      "publicNotes": "On pause pending college-wide ACA updates",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "ASL-111",
-      "title": "Elementary ASL I",
-      "instructor": "Christina Royal",
-      "instructorEmail": "croyal@ftcc.edu",
-      "department": "Humanities",
-      "courseRep": "Christina Royal",
-      "complexity": "Medium",
-      "cte": false,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 15,
-      "totalModules": 12,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-15",
-      "lastUpdated": "2026-01-13",
-      "notes": "Course Rep uncomfortable with leading changes. Paused pending Dr. McNair-Williams updates. Aligned course structure provided via email.",
-      "publicNotes": "On pause pending division updates",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
       "id": "BPR-130",
-      "title": "Blueprint Reading",
+      "title": "Print Reading-Construction",
       "instructor": "Keith Carter",
       "instructorEmail": "kcarter@ftcc.edu",
       "department": "Industrial",
@@ -154,7 +78,7 @@
     },
     {
       "id": "BUS-253",
-      "title": "Business Elective",
+      "title": "Leadership & Management Skills",
       "instructor": "Dr. Willie Pomeroy",
       "instructorEmail": "wpomeroy@ftcc.edu",
       "department": "Business",
@@ -191,8 +115,8 @@
       ]
     },
     {
-      "id": "CSC-113",
-      "title": "Computer Science Fundamentals",
+      "id": "CTS-113",
+      "title": "AI Fundamentals",
       "instructor": "Andrew Norris",
       "instructorEmail": "anorris@ftcc.edu",
       "department": "IT",
@@ -229,8 +153,8 @@
       ]
     },
     {
-      "id": "CSC-285",
-      "title": "Computer Science Pre-Capstone",
+      "id": "CTS-285",
+      "title": "Systems Design & Analysis",
       "instructor": "Andrew Norris",
       "instructorEmail": "anorris@ftcc.edu",
       "department": "IT",
@@ -267,8 +191,8 @@
       ]
     },
     {
-      "id": "CSC-289",
-      "title": "Computer Science Capstone",
+      "id": "CTS-289",
+      "title": "System Support Project",
       "instructor": "Andrew Norris",
       "instructorEmail": "anorris@ftcc.edu",
       "department": "IT",
@@ -306,7 +230,7 @@
     },
     {
       "id": "FSE-116",
-      "title": "Fire Protection Systems",
+      "title": "Funeral Law & Ethics",
       "instructor": "Tawanna Johnson",
       "instructorEmail": "tjohnson@ftcc.edu",
       "department": "Fire Science",
@@ -344,7 +268,7 @@
     },
     {
       "id": "FSE-210",
-      "title": "Fire Science Elective",
+      "title": "Embalming Theory I",
       "instructor": "Trey Herring",
       "instructorEmail": "therring@ftcc.edu",
       "department": "Fire Science",
@@ -382,7 +306,7 @@
     },
     {
       "id": "FSE-212",
-      "title": "Fire Science Advanced",
+      "title": "Embalming Theory II",
       "instructor": "Trey Herring",
       "instructorEmail": "therring@ftcc.edu",
       "department": "Fire Science",
@@ -419,8 +343,46 @@
       ]
     },
     {
+      "id": "GRD-121",
+      "title": "Drawing Fundamentals I",
+      "instructor": "Jason Canady",
+      "instructorEmail": "jcanady@ftcc.edu",
+      "department": "Graphic Design",
+      "courseRep": "Jason Canady",
+      "complexity": "Medium",
+      "cte": true,
+      "stage": 1,
+      "microstage": 1,
+      "progress": 10,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-15",
+      "lastUpdated": "2026-01-13",
+      "notes": "New course - Planning phase.",
+      "publicNotes": "Planning phase",
+      "status": "Planning Phase",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
       "id": "GRD-132",
-      "title": "Graphic Design Fundamentals",
+      "title": "Illustration II",
       "instructor": "Sara Smith",
       "instructorEmail": "ssmith@ftcc.edu",
       "department": "Graphic Design",
@@ -534,7 +496,7 @@
     },
     {
       "id": "GRD-155",
-      "title": "Graphic Design III",
+      "title": "Publication Design",
       "instructor": "Jennifer Fisher",
       "instructorEmail": "jfisher@ftcc.edu",
       "department": "Graphic Design",
@@ -572,7 +534,7 @@
     },
     {
       "id": "GRD-159",
-      "title": "Graphic Design Advanced",
+      "title": "Raster Imaging Applications",
       "instructor": "Jennifer Fisher",
       "instructorEmail": "jfisher@ftcc.edu",
       "department": "Graphic Design",
@@ -610,7 +572,7 @@
     },
     {
       "id": "GRD-242",
-      "title": "Graphic Design Portfolio",
+      "title": "Graphic Design IV",
       "instructor": "Addrienne Vanover",
       "instructorEmail": "avanover@ftcc.edu",
       "department": "Graphic Design",
@@ -643,82 +605,6 @@
           "name": "HIDOC Sheet",
           "url": "",
           "status": "Received"
-        }
-      ]
-    },
-    {
-      "id": "HIS-111",
-      "title": "World Civilizations I",
-      "instructor": "Dr. Melinda Pash",
-      "instructorEmail": "mpash@ftcc.edu",
-      "department": "Humanities",
-      "courseRep": "Dr. Melinda Pash",
-      "complexity": "Medium",
-      "cte": false,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-15",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional Support paused pending Dr. McNair-Williams updates.",
-      "publicNotes": "On pause pending division updates",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "HIS-112",
-      "title": "World Civilizations II",
-      "instructor": "Brian Long",
-      "instructorEmail": "blong@ftcc.edu",
-      "department": "Humanities",
-      "courseRep": "Brian Long",
-      "complexity": "Medium",
-      "cte": false,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-15",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional Support paused pending Dr. McNair-Williams updates.",
-      "publicNotes": "On pause pending division updates",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
         }
       ]
     },
@@ -785,158 +671,6 @@
           "name": "Course Map",
           "url": "",
           "status": "Received"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "HOR-134",
-      "title": "Horticulture Course",
-      "instructor": "Dr. R. Pusztay",
-      "instructorEmail": "rpusztay@ftcc.edu",
-      "department": "Horticulture",
-      "courseRep": "Dr. R. Pusztay",
-      "complexity": "Medium",
-      "cte": true,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional support paused until after Spring Plant Sale per Dean Gibson & Dr. Pomeroy.",
-      "publicNotes": "On pause until after Spring Plant Sale",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "HOR-166",
-      "title": "Horticulture Advanced",
-      "instructor": "Dr. R. Pusztay",
-      "instructorEmail": "rpusztay@ftcc.edu",
-      "department": "Horticulture",
-      "courseRep": "Dr. R. Pusztay",
-      "complexity": "Medium",
-      "cte": true,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional support paused until after Spring Plant Sale.",
-      "publicNotes": "On pause until after Spring Plant Sale",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "HUM-110",
-      "title": "Technology & Society",
-      "instructor": "Dr. Christopher Thrasher",
-      "instructorEmail": "cthrasher@ftcc.edu",
-      "department": "Humanities",
-      "courseRep": "Dr. Christopher Thrasher",
-      "complexity": "Medium",
-      "cte": false,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-15",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional Support on hold pending Dr. McNair-Williams updates.",
-      "publicNotes": "On hold pending division updates",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "HUM-130",
-      "title": "Myth in Human Culture",
-      "instructor": "Dr. Melinda Pash",
-      "instructorEmail": "mpash@ftcc.edu",
-      "department": "Humanities",
-      "courseRep": "Dr. Melinda Pash",
-      "complexity": "Medium",
-      "cte": false,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-15",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional Support paused pending Dr. McNair-Williams updates.",
-      "publicNotes": "On pause pending division updates",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
         },
         {
           "name": "Syllabus",
@@ -1027,82 +761,6 @@
       ]
     },
     {
-      "id": "MUS-110",
-      "title": "Music Appreciation",
-      "instructor": "Alec Powers",
-      "instructorEmail": "apowers@ftcc.edu",
-      "department": "Humanities",
-      "courseRep": "Alec Powers",
-      "complexity": "Low",
-      "cte": false,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-15",
-      "lastUpdated": "2026-01-13",
-      "notes": "On hold. Dr. Pomeroy to meet with Daniela Newland for priorities.",
-      "publicNotes": "On hold - awaiting priority meeting",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "PHI-240",
-      "title": "Introduction to Ethics",
-      "instructor": "Julian Beltran",
-      "instructorEmail": "jbeltran@ftcc.edu",
-      "department": "Humanities",
-      "courseRep": "Julian Beltran",
-      "complexity": "Medium",
-      "cte": false,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-15",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional Support on hold pending Dr. McNair-Williams updates.",
-      "publicNotes": "On hold pending division updates",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
       "id": "POL-120",
       "title": "American Government",
       "instructor": "Dr. Christopher Thrasher",
@@ -1149,7 +807,7 @@
       "courseRep": "Vernette Gilbreath",
       "complexity": "Medium",
       "cte": false,
-      "stage": 1,
+      "stage": 2,
       "microstage": 2,
       "progress": 20,
       "totalModules": 12,
@@ -1158,45 +816,7 @@
       "lastUpdated": "2026-01-13",
       "notes": "Will begin collaborating following census date. Teams meeting scheduled for 1-30-2026.",
       "publicNotes": "Starting soon - meeting scheduled 1/30",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "REL-110",
-      "title": "World Religions",
-      "instructor": "Dr. Gaylyn Eddy",
-      "instructorEmail": "geddy@ftcc.edu",
-      "department": "Humanities",
-      "courseRep": "Dr. Gaylyn Eddy",
-      "complexity": "Medium",
-      "cte": false,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-15",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional Support on hold pending Dr. McNair-Williams updates.",
-      "publicNotes": "On hold pending division updates",
-      "status": "Planning Phase",
+      "status": "Active Development",
       "archived": false,
       "documents": [
         {
@@ -1235,44 +855,6 @@
       "notes": "Will resume collaborating following census date. Scheduled to email requesting meeting.",
       "publicNotes": "Resuming after census date",
       "status": "Active Development",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Received"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "SOC-220",
-      "title": "Sociology Course",
-      "instructor": "Dr. Shandrika McNair-Williams",
-      "instructorEmail": "smcnairwilliams@ftcc.edu",
-      "department": "Social Science",
-      "courseRep": "Dr. Shandrika McNair-Williams",
-      "complexity": "Medium",
-      "cte": false,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-15",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional Support on hold pending Dr. McNair-Williams updates. QM Staff Leader: Colleen Galan.",
-      "publicNotes": "On hold pending division updates",
-      "status": "Planning Phase",
       "archived": false,
       "documents": [
         {
@@ -1332,7 +914,7 @@
     },
     {
       "id": "TRF-110",
-      "title": "Turfgrass Science",
+      "title": "Intro Turfgrass Cult & ID",
       "instructor": "Dr. R. Pusztay",
       "instructorEmail": "rpusztay@ftcc.edu",
       "department": "Horticulture",
@@ -1370,7 +952,7 @@
     },
     {
       "id": "VEN-135",
-      "title": "Viticulture/Enology I",
+      "title": "Intro to Viticulture",
       "instructor": "Dr. R. Pusztay",
       "instructorEmail": "rpusztay@ftcc.edu",
       "department": "Viticulture",
@@ -1407,46 +989,8 @@
       ]
     },
     {
-      "id": "VEN-138",
-      "title": "Viticulture/Enology II",
-      "instructor": "Dr. R. Pusztay",
-      "instructorEmail": "rpusztay@ftcc.edu",
-      "department": "Viticulture",
-      "courseRep": "Dr. R. Pusztay",
-      "complexity": "High",
-      "cte": true,
-      "stage": "H",
-      "microstage": 0,
-      "progress": 0,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-05-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "Instructional support paused until after Spring Plant Sale per Dean Gibson & Dr. Pomeroy.",
-      "publicNotes": "On pause until after Spring Plant Sale",
-      "status": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
       "id": "VEN-287",
-      "title": "Viticulture/Enology Advanced",
+      "title": "Vineyard Operations",
       "instructor": "Dr. R. Pusztay",
       "instructorEmail": "rpusztay@ftcc.edu",
       "department": "Viticulture",
