@@ -63,7 +63,8 @@
                 } catch (error) {
                     console.error('Error loading data:', error);
                 }
-                return DataManager.getDefaultData();
+                // Return empty array - data will be loaded via fetch in useEffect
+                return [];
             },
 
             save: (courses) => {
@@ -216,7 +217,24 @@
             // Load data on mount
             useEffect(() => {
                 const loadedCourses = DataManager.load();
-                setCourses(loadedCourses);
+                if (loadedCourses.length > 0) {
+                    // Data found in localStorage
+                    setCourses(loadedCourses);
+                } else {
+                    // No data in localStorage, fetch from JSON file
+                    fetch('courses-v2.json')
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.courses && Array.isArray(data.courses)) {
+                                setCourses(data.courses);
+                            }
+                        })
+                        .catch(err => {
+                            console.error('Error loading courses-v2.json:', err);
+                            // Fall back to default data only if fetch fails
+                            setCourses(DataManager.getDefaultData());
+                        });
+                }
             }, []);
 
             // Save data whenever courses change
