@@ -2,6 +2,8 @@
 
 A powerful, dual-mode dashboard for tracking High-Quality Course Development Program (HQCDP) progress. Features a simplified supervisor view for leadership and a comprehensive admin interface for course management.
 
+**Last Updated:** 2026-01-14 10:42 EST
+
 ## 🎯 Features
 
 ### Supervisor View (Boss-Facing)
