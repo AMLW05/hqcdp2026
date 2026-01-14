@@ -1,24 +1,24 @@
 {
   "courses": [
     {
-      "id": "BPR-130",
-      "title": "Print Reading-Construction",
-      "instructor": "Keith Carter",
+      "id": "MKT-120",
+      "title": "Principles of Marketing",
+      "instructor": "Sharon Seaford",
       "cte": true,
-      "stage": 4,
-      "status": "Active Development",
-      "instructorEmail": "keithcarter@ftcc.edu",
-      "department": "BPR",
-      "courseRep": "Keith Carter",
+      "stage": 7,
+      "status": "Certified",
+      "instructorEmail": "sharonseaford@ftcc.edu",
+      "department": "MKT",
+      "courseRep": "Sharon Seaford",
       "complexity": "Medium",
-      "microstage": 4,
-      "progress": 50,
+      "microstage": 7,
+      "progress": 100,
       "totalModules": 10,
-      "modulesCompleted": 5,
+      "modulesCompleted": 10,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
-      "publicNotes": "Active Development",
+      "publicNotes": "Certified",
       "archived": false,
       "documents": [
         {
@@ -39,24 +39,24 @@
       ]
     },
     {
-      "id": "BUS-115",
-      "title": "Business Law I",
-      "instructor": "Lashonda Lewis",
+      "id": "BPR-130",
+      "title": "Print Reading-Construction",
+      "instructor": "Keith Carter",
       "cte": true,
-      "stage": 1,
-      "status": "Planning Phase",
-      "instructorEmail": "lashondalewis@ftcc.edu",
-      "department": "BUS",
-      "courseRep": "Lashonda Lewis",
+      "stage": 3,
+      "status": "Active Development",
+      "instructorEmail": "keithcarter@ftcc.edu",
+      "department": "BPR",
+      "courseRep": "Keith Carter",
       "complexity": "Medium",
-      "microstage": 1,
-      "progress": 10,
+      "microstage": 3,
+      "progress": 50,
       "totalModules": 10,
-      "modulesCompleted": 0,
+      "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
-      "publicNotes": "Planning Phase",
+      "publicNotes": "Active Development",
       "archived": false,
       "documents": [
         {
@@ -81,18 +81,18 @@
       "title": "Leadership & Management Skills",
       "instructor": "Willie Pomeroy",
       "cte": true,
-      "stage": 2,
+      "stage": 3,
       "status": "Active Development",
       "instructorEmail": "williepomeroy@ftcc.edu",
       "department": "BUS",
       "courseRep": "Willie Pomeroy",
       "complexity": "Medium",
-      "microstage": 2,
+      "microstage": 3,
       "progress": 50,
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
       "archived": false,
@@ -130,7 +130,7 @@
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
       "archived": false,
@@ -157,18 +157,18 @@
       "title": "Systems Design & Analysis",
       "instructor": "Andrew Norris",
       "cte": true,
-      "stage": 4,
+      "stage": 3,
       "status": "Active Development",
       "instructorEmail": "andrewnorris@ftcc.edu",
       "department": "CTS",
       "courseRep": "Andrew Norris",
       "complexity": "Medium",
-      "microstage": 4,
+      "microstage": 3,
       "progress": 50,
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
       "archived": false,
@@ -195,246 +195,18 @@
       "title": "System Support Project",
       "instructor": "Andrew Norris",
       "cte": true,
-      "stage": 4,
+      "stage": 3,
       "status": "Active Development",
       "instructorEmail": "andrewnorris@ftcc.edu",
       "department": "CTS",
       "courseRep": "Andrew Norris",
       "complexity": "Medium",
-      "microstage": 4,
+      "microstage": 3,
       "progress": 50,
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Active Development",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "FSE-116",
-      "title": "Funeral Law & Ethics",
-      "instructor": "Tawanna Johnson",
-      "cte": true,
-      "stage": 1,
-      "status": "Planning Phase",
-      "instructorEmail": "tawannajohnson@ftcc.edu",
-      "department": "FSE",
-      "courseRep": "Tawanna Johnson",
-      "complexity": "Medium",
-      "microstage": 1,
-      "progress": 10,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "FSE-210",
-      "title": "Embalming Theory I",
-      "instructor": "Trey Herring",
-      "cte": true,
-      "stage": 1,
-      "status": "Planning Phase",
-      "instructorEmail": "treyherring@ftcc.edu",
-      "department": "FSE",
-      "courseRep": "Trey Herring",
-      "complexity": "Medium",
-      "microstage": 1,
-      "progress": 10,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "FSE-212",
-      "title": "Embalming Theory II",
-      "instructor": "Trey Herring",
-      "cte": true,
-      "stage": 1,
-      "status": "Planning Phase",
-      "instructorEmail": "treyherring@ftcc.edu",
-      "department": "FSE",
-      "courseRep": "Trey Herring",
-      "complexity": "Medium",
-      "microstage": 1,
-      "progress": 10,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "GRD-121",
-      "title": "Drawing Fundamentals I",
-      "instructor": "Jason Canady",
-      "cte": true,
-      "stage": 1,
-      "status": "Planning Phase",
-      "instructorEmail": "jasoncanady@ftcc.edu",
-      "department": "GRD",
-      "courseRep": "Jason Canady",
-      "complexity": "Medium",
-      "microstage": 1,
-      "progress": 10,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "GRD-132",
-      "title": "Illustration II",
-      "instructor": "Sara Smith",
-      "cte": true,
-      "stage": 4,
-      "status": "Active Development",
-      "instructorEmail": "sarasmith@ftcc.edu",
-      "department": "GRD",
-      "courseRep": "Sara Smith",
-      "complexity": "Medium",
-      "microstage": 4,
-      "progress": 50,
-      "totalModules": 10,
-      "modulesCompleted": 5,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Active Development",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "GRD-142",
-      "title": "Graphic Design II",
-      "instructor": "Danielle Fennern",
-      "cte": true,
-      "stage": 4,
-      "status": "Active Development",
-      "instructorEmail": "daniellefennern@ftcc.edu",
-      "department": "GRD",
-      "courseRep": "Danielle Fennern",
-      "complexity": "Medium",
-      "microstage": 4,
-      "progress": 50,
-      "totalModules": 10,
-      "modulesCompleted": 5,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
       "archived": false,
@@ -461,18 +233,18 @@
       "title": "Vector Imaging Software",
       "instructor": "Jennifer Fisher",
       "cte": true,
-      "stage": 4,
+      "stage": 3,
       "status": "Active Development",
       "instructorEmail": "jenniferfisher@ftcc.edu",
       "department": "GRD",
       "courseRep": "Jennifer Fisher",
       "complexity": "Medium",
-      "microstage": 4,
+      "microstage": 3,
       "progress": 50,
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
       "archived": false,
@@ -510,7 +282,7 @@
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
       "archived": false,
@@ -548,7 +320,7 @@
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
       "archived": false,
@@ -575,18 +347,18 @@
       "title": "Graphic Design IV",
       "instructor": "Addrienne Vanover",
       "cte": true,
-      "stage": 4,
+      "stage": 3,
       "status": "Active Development",
       "instructorEmail": "addriennevanove@ftcc.edu",
       "department": "GRD",
       "courseRep": "Addrienne Vanover",
       "complexity": "Medium",
-      "microstage": 4,
+      "microstage": 3,
       "progress": 50,
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
       "archived": false,
@@ -624,161 +396,9 @@
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "HIS-132",
-      "title": "American History II",
-      "instructor": "Jessie Kiker",
-      "cte": false,
-      "stage": 3,
-      "status": "Active Development",
-      "instructorEmail": "jessiekiker@ftcc.edu",
-      "department": "HIS",
-      "courseRep": "Jessie Kiker",
-      "complexity": "Medium",
-      "microstage": 3,
-      "progress": 50,
-      "totalModules": 10,
-      "modulesCompleted": 5,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Active Development",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "MAT-110",
-      "title": "Math Measurement & Literacy",
-      "instructor": "David McCarter",
-      "cte": false,
-      "stage": 1,
-      "status": "Planning Phase",
-      "instructorEmail": "davidmccarter@ftcc.edu",
-      "department": "MAT",
-      "courseRep": "David McCarter",
-      "complexity": "Medium",
-      "microstage": 1,
-      "progress": 10,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "MKT-120",
-      "title": "Principles of Marketing",
-      "instructor": "Sharon Seaford",
-      "cte": true,
-      "stage": 7,
-      "status": "Certified",
-      "instructorEmail": "sharonseaford@ftcc.edu",
-      "department": "MKT",
-      "courseRep": "Sharon Seaford",
-      "complexity": "Medium",
-      "microstage": 7,
-      "progress": 100,
-      "totalModules": 10,
-      "modulesCompleted": 10,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Certified",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "POL-120",
-      "title": "American Government",
-      "instructor": "Christopher Thrasher",
-      "cte": false,
-      "stage": 1,
-      "status": "Planning Phase",
-      "instructorEmail": "christopherthra@ftcc.edu",
-      "department": "POL",
-      "courseRep": "Christopher Thrasher",
-      "complexity": "Medium",
-      "microstage": 1,
-      "progress": 10,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Planning Phase",
       "archived": false,
       "documents": [
         {
@@ -803,18 +423,18 @@
       "title": "General Psychology",
       "instructor": "Vernette Gilbreath",
       "cte": false,
-      "stage": 2,
+      "stage": 3,
       "status": "Active Development",
       "instructorEmail": "vernettegilbrea@ftcc.edu",
       "department": "PSY",
       "courseRep": "Vernette Gilbreath",
       "complexity": "Medium",
-      "microstage": 2,
+      "microstage": 3,
       "progress": 50,
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
       "archived": false,
@@ -841,96 +461,20 @@
       "title": "Sociology of the Family",
       "instructor": "Karen Boyd",
       "cte": false,
-      "stage": 2,
+      "stage": 3,
       "status": "Active Development",
       "instructorEmail": "karenboyd@ftcc.edu",
       "department": "SOC",
       "courseRep": "Karen Boyd",
       "complexity": "Medium",
-      "microstage": 2,
+      "microstage": 3,
       "progress": 50,
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "SPA-111",
-      "title": "Elementary Spanish I",
-      "instructor": "George Adams",
-      "cte": false,
-      "stage": 1,
-      "status": "Planning Phase",
-      "instructorEmail": "georgeadams@ftcc.edu",
-      "department": "SPA",
-      "courseRep": "George Adams",
-      "complexity": "Medium",
-      "microstage": 1,
-      "progress": 10,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Planning Phase",
-      "archived": false,
-      "documents": [
-        {
-          "name": "Course Map",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "Syllabus",
-          "url": "",
-          "status": "Pending"
-        },
-        {
-          "name": "HIDOC Sheet",
-          "url": "",
-          "status": "Pending"
-        }
-      ]
-    },
-    {
-      "id": "TRF-110",
-      "title": "Intro Turfgrass Cult & ID",
-      "instructor": "R. Pusztay",
-      "cte": true,
-      "stage": 1,
-      "status": "Planning Phase",
-      "instructorEmail": "r.pusztay@ftcc.edu",
-      "department": "TRF",
-      "courseRep": "R. Pusztay",
-      "complexity": "Medium",
-      "microstage": 1,
-      "progress": 10,
-      "totalModules": 10,
-      "modulesCompleted": 0,
-      "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
-      "notes": "",
-      "publicNotes": "Planning Phase",
       "archived": false,
       "documents": [
         {
@@ -966,9 +510,351 @@
       "totalModules": 10,
       "modulesCompleted": 5,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Active Development",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "FSE-210",
+      "title": "Embalming Theory I",
+      "instructor": "Trey Herring",
+      "cte": true,
+      "stage": 1,
+      "status": "Planning Stage",
+      "instructorEmail": "treyherring@ftcc.edu",
+      "department": "FSE",
+      "courseRep": "Trey Herring",
+      "complexity": "Medium",
+      "microstage": 1,
+      "progress": 10,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-14",
+      "notes": "",
+      "publicNotes": "Planning Stage",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "FSE-212",
+      "title": "Embalming Theory II",
+      "instructor": "Trey Herring",
+      "cte": true,
+      "stage": 1,
+      "status": "Planning Stage",
+      "instructorEmail": "treyherring@ftcc.edu",
+      "department": "FSE",
+      "courseRep": "Trey Herring",
+      "complexity": "Medium",
+      "microstage": 1,
+      "progress": 10,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-14",
+      "notes": "",
+      "publicNotes": "Planning Stage",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "GRD-121",
+      "title": "Drawing Fundamentals I",
+      "instructor": "Jason Canady",
+      "cte": true,
+      "stage": 1,
+      "status": "Planning Stage",
+      "instructorEmail": "jasoncanady@ftcc.edu",
+      "department": "GRD",
+      "courseRep": "Jason Canady",
+      "complexity": "Medium",
+      "microstage": 1,
+      "progress": 10,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-14",
+      "notes": "",
+      "publicNotes": "Planning Stage",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "GRD-132",
+      "title": "Illustration II",
+      "instructor": "Sara Smith",
+      "cte": true,
+      "stage": 1,
+      "status": "Planning Stage",
+      "instructorEmail": "sarasmith@ftcc.edu",
+      "department": "GRD",
+      "courseRep": "Sara Smith",
+      "complexity": "Medium",
+      "microstage": 1,
+      "progress": 10,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-14",
+      "notes": "",
+      "publicNotes": "Planning Stage",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "GRD-142",
+      "title": "Graphic Design II",
+      "instructor": "Danielle Fennern",
+      "cte": true,
+      "stage": 1,
+      "status": "Planning Stage",
+      "instructorEmail": "daniellefennern@ftcc.edu",
+      "department": "GRD",
+      "courseRep": "Danielle Fennern",
+      "complexity": "Medium",
+      "microstage": 1,
+      "progress": 10,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-14",
+      "notes": "",
+      "publicNotes": "Planning Stage",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "HIS-132",
+      "title": "American History II",
+      "instructor": "Jessie Kiker",
+      "cte": false,
+      "stage": 1,
+      "status": "Planning Stage",
+      "instructorEmail": "jessiekiker@ftcc.edu",
+      "department": "HIS",
+      "courseRep": "Jessie Kiker",
+      "complexity": "Medium",
+      "microstage": 1,
+      "progress": 10,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-14",
+      "notes": "",
+      "publicNotes": "Planning Stage",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "MAT-110",
+      "title": "Math Measurement & Literacy",
+      "instructor": "David McCarter",
+      "cte": false,
+      "stage": 1,
+      "status": "Planning Stage",
+      "instructorEmail": "davidmccarter@ftcc.edu",
+      "department": "MAT",
+      "courseRep": "David McCarter",
+      "complexity": "Medium",
+      "microstage": 1,
+      "progress": 10,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-14",
+      "notes": "",
+      "publicNotes": "Planning Stage",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "POL-120",
+      "title": "American Government",
+      "instructor": "Christopher Thrasher",
+      "cte": false,
+      "stage": 1,
+      "status": "Planning Stage",
+      "instructorEmail": "christopherthra@ftcc.edu",
+      "department": "POL",
+      "courseRep": "Christopher Thrasher",
+      "complexity": "Medium",
+      "microstage": 1,
+      "progress": 10,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-14",
+      "notes": "",
+      "publicNotes": "Planning Stage",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "SPA-111",
+      "title": "Elementary Spanish I",
+      "instructor": "George Adams",
+      "cte": false,
+      "stage": 1,
+      "status": "Planning Stage",
+      "instructorEmail": "georgeadams@ftcc.edu",
+      "department": "SPA",
+      "courseRep": "George Adams",
+      "complexity": "Medium",
+      "microstage": 1,
+      "progress": 10,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-14",
+      "notes": "",
+      "publicNotes": "Planning Stage",
       "archived": false,
       "documents": [
         {
@@ -993,20 +879,20 @@
       "title": "Vineyard Operations",
       "instructor": "R. Pusztay",
       "cte": true,
-      "stage": 3,
-      "status": "Active Development",
+      "stage": 1,
+      "status": "Planning Stage",
       "instructorEmail": "r.pusztay@ftcc.edu",
       "department": "VEN",
       "courseRep": "R. Pusztay",
       "complexity": "Medium",
-      "microstage": 3,
-      "progress": 50,
+      "microstage": 1,
+      "progress": 10,
       "totalModules": 10,
-      "modulesCompleted": 5,
+      "modulesCompleted": 0,
       "deadline": "2026-06-30",
-      "lastUpdated": "2026-01-13",
+      "lastUpdated": "2026-01-14",
       "notes": "",
-      "publicNotes": "Active Development",
+      "publicNotes": "Planning Stage",
       "archived": false,
       "documents": [
         {
