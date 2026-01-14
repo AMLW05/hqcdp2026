@@ -366,12 +366,12 @@
                                     {courses.length < 10 && (
                                         <button
                                             onClick={() => {
-                                                if (confirm('Import Spring 2026 Master Course List (38 courses)?')) {
-                                                    fetch('sp2026-courses-data.json')
+                                                if (confirm('Import Spring 2026 Course List (24 courses)?')) {
+                                                    fetch('courses-v2.json')
                                                         .then(res => res.json())
                                                         .then(data => {
                                                             setCourses(data.courses);
-                                                            alert('✅ Imported 38 SP2026 courses!\n\n- 16 In Progress\n- 7 Anticipated/Scheduled\n- 1 Certified\n- 14 On Hold (hidden from Supervisor View)');
+                                                            alert('✅ Imported 24 courses!\n\n- 1 Certified\n- 13 Active Development\n- 10 Planning Stage');
                                                         })
                                                         .catch(err => {
                                                             console.error(err);
