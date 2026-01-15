@@ -2,7 +2,7 @@
 
 A powerful, dual-mode dashboard for tracking High-Quality Course Development Program (HQCDP) progress. Features a simplified supervisor view for leadership and a comprehensive admin interface for course management.
 
-**Last Updated:** 2026-01-14 10:42 EST
+**Last Updated:** 2026-01-15
 
 ## 🎯 Features
 
@@ -126,10 +126,11 @@ Each course contains:
 | 1 | Planning | Initial planning phase | Blue |
 | 2 | Foundation | Building course foundation | Yellow |
 | 3 | Active Build | Main development work | Orange |
-| 4 | Internal Review | Under internal review | Purple |
-| 5 | Refinement | Refining based on feedback | Indigo |
-| 6 | Quality Assurance | Final QA checks | Pink |
-| 7 | Certified | Complete and certified | Green |
+| 4 | Content Complete - Under Review | Content built, under Course Rep review | Purple |
+| 5 | Internal Review | Under internal review | Indigo |
+| 6 | Refinement | Refining based on feedback | Pink |
+| 7 | Quality Assurance | Final QA checks | Cyan |
+| 8 | Certified | Complete and certified | Green |
 | H | On Hold | Temporarily paused | Red |
 | R | Recertification | Recertification process | Teal |
 
