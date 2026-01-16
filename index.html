@@ -35,17 +35,14 @@
         const { useState, useEffect, useMemo, useCallback } = React;
 
         // ==================== STAGE DEFINITIONS ====================
+        // 6-Stage ROYGBIV Pyramid Model
         const STAGE_DEFINITIONS = {
-            0: { name: 'Not Started', color: '#9ca3af', icon: '📋', shortName: 'Not Started' },
-            1: { name: 'Planning', color: '#3b82f6', icon: '📐', shortName: 'Planning' },
-            2: { name: 'Foundation', color: '#eab308', icon: '🏗️', shortName: 'Foundation' },
-            3: { name: 'Active Build', color: '#f97316', icon: '🔨', shortName: 'Building' },
-            4: { name: 'Internal Review', color: '#a855f7', icon: '🔍', shortName: 'Review' },
-            5: { name: 'Refinement', color: '#6366f1', icon: '✨', shortName: 'Refinement' },
-            6: { name: 'Quality Assurance', color: '#ec4899', icon: '✅', shortName: 'QA' },
-            7: { name: 'Certified', color: '#10b981', icon: '🏆', shortName: 'Certified' },
-            'H': { name: 'On Hold', color: '#ef4444', icon: '⏸️', shortName: 'On Hold' },
-            'R': { name: 'Recertification', color: '#14b8a6', icon: '🔄', shortName: 'Recert' }
+            1: { name: 'Planning', color: '#ef4444', icon: '🔴', shortName: 'Planning' },              // RED
+            2: { name: 'Active Development', color: '#f97316', icon: '🟠', shortName: 'Building' },    // ORANGE
+            3: { name: 'Course Rep Review', color: '#eab308', icon: '🟡', shortName: 'Rep Review' },   // YELLOW
+            4: { name: 'Internal Review', color: '#10b981', icon: '🟢', shortName: 'Internal Review' }, // GREEN
+            5: { name: 'Post-Review', color: '#3b82f6', icon: '🔵', shortName: 'Post-Review' },        // BLUE
+            6: { name: 'Certified', color: '#8b5cf6', icon: '🟣', shortName: 'Certified' }             // VIOLET
         };
 
         // ==================== DATA MANAGER ====================
