@@ -2,7 +2,7 @@
 
 A powerful, dual-mode dashboard for tracking High-Quality Course Development Program (HQCDP) progress. Features a simplified supervisor view for leadership and a comprehensive admin interface for course management.
 
-**Last Updated:** 2026-01-15
+**Last Updated:** 2026-01-16
 
 ## 🎯 Features
 
@@ -120,19 +120,46 @@ Each course contains:
 
 ## 🎨 Stage Definitions
 
-| Stage | Name | Description | Color |
-|-------|------|-------------|-------|
-| 0 | Not Started | Course not yet begun | Gray |
-| 1 | Planning | Initial planning phase | Blue |
-| 2 | Foundation | Building course foundation | Yellow |
-| 3 | Active Build | Main development work | Orange |
-| 4 | Content Complete - Under Review | Content built, under Course Rep review | Purple |
-| 5 | Internal Review | Under internal review | Indigo |
-| 6 | Refinement | Refining based on feedback | Pink |
-| 7 | Quality Assurance | Final QA checks | Cyan |
-| 8 | Certified | Complete and certified | Green |
-| H | On Hold | Temporarily paused | Red |
-| R | Recertification | Recertification process | Teal |
+The HQCDP program uses a **6-stage pyramid model** to track course development progress. Like a pyramid, each stage builds on the previous one, with the ultimate goal of reaching the apex: Certification.
+
+### Stage Pyramid (ROYGBIV Color Scheme)
+
+```
+                    ▲ Stage 6
+                   ╱ ╲  VIOLET
+                  ╱   ╲ (Certified)
+                 ╱─────╲
+                ╱ Stage 5 ╲
+               ╱   BLUE     ╲
+              ╱ (Post-Review)╲
+             ╱───────────────╲
+            ╱   Stage 4        ╲
+           ╱     GREEN          ╲
+          ╱ (Internal Review)    ╲
+         ╱───────────────────────╲
+        ╱      Stage 3             ╲
+       ╱       YELLOW               ╲
+      ╱  (Course Rep Review)         ╲
+     ╱─────────────────────────────╲
+    ╱         Stage 2                ╲
+   ╱          ORANGE                  ╲
+  ╱     (Active Development)           ╲
+ ╱───────────────────────────────────╲
+╱            Stage 1                   ╲
+             RED
+          (Planning)
+```
+
+### Color Key
+
+| Stage | Name | Description | Color (ROYGBIV) |
+|-------|------|-------------|-----------------|
+| 1 | Planning | Initial planning and course design | 🔴 Red |
+| 2 | Active Development | Building course content and materials | 🟠 Orange |
+| 3 | Course Rep Review | Content complete, under Course Rep review | 🟡 Yellow |
+| 4 | Internal Review | Under internal QA review | 🟢 Green |
+| 5 | Post-Review | Final refinements after review | 🔵 Blue |
+| 6 | Certified | Complete and certified for delivery | 🟣 Violet |
 
 ## 💾 Data Management
 
