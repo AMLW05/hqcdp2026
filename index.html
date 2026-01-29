@@ -478,7 +478,6 @@
 
             // State for expandable sections
             const [showQMReady, setShowQMReady] = useState(false);
-            const [showQualityCheck, setShowQualityCheck] = useState(false);
             const [showAllCourses, setShowAllCourses] = useState(false);
 
             return (
@@ -491,9 +490,9 @@
                         {/* KEY METRICS - MINIMAL */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                             <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                                <div className="text-6xl font-bold mb-2">11</div>
-                                <div className="text-lg text-cyan-200">Courses Ready/Near-Ready</div>
-                                <div className="text-sm text-cyan-300 mt-2">6 Built | 4 Quality Check | 1 Certified</div>
+                                <div className="text-6xl font-bold mb-2">10</div>
+                                <div className="text-lg text-cyan-200">Courses Built & QM-Ready</div>
+                                <div className="text-sm text-cyan-300 mt-2">100% complete, awaiting Canvas finalization</div>
                             </div>
                             <div className="bg-white/10 backdrop-blur rounded-xl p-6">
                                 <div className="text-6xl font-bold mb-2">55%</div>
@@ -512,15 +511,15 @@
                         </div>
                     </div>
 
-                    {/* EXPANDABLE: 6 QM-READY COURSES */}
+                    {/* EXPANDABLE: 10 QM-READY COURSES */}
                     <div className="bg-white rounded-xl shadow-md overflow-hidden">
                         <button
                             onClick={() => setShowQMReady(!showQMReady)}
                             className="w-full p-6 text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
                         >
                             <div>
-                                <h3 className="text-2xl font-bold text-gray-900">✅ 6 Courses Fully Built & QM-Ready</h3>
-                                <p className="text-gray-600 mt-1">100% complete, awaiting course rep approval</p>
+                                <h3 className="text-2xl font-bold text-gray-900">✅ 10 Courses Fully Built & QM-Ready</h3>
+                                <p className="text-gray-600 mt-1">100% complete, QM-aligned, awaiting Canvas finalization by course reps before internal review</p>
                             </div>
                             <span className="text-3xl text-gray-400">{showQMReady ? '−' : '+'}</span>
                         </button>
@@ -533,40 +532,13 @@
                                         { id: 'CSC-249', title: 'Data Structures & Algorithms', instructor: 'Andrew Norris' },
                                         { id: 'CSC-289', title: 'System Support Project', instructor: 'Andrew Norris' },
                                         { id: 'CTS-285', title: 'Systems Design & Analysis', instructor: 'Andrew Norris' },
-                                        { id: 'HUM-130', title: 'Myth in Human Culture', instructor: 'Dr. Melinda Pash' }
-                                    ].map(course => (
-                                        <div key={course.id} className="bg-white p-4 rounded-lg border-l-4 border-yellow-500">
-                                            <div className="font-bold text-gray-900">{course.id} - {course.title}</div>
-                                            <div className="text-sm text-gray-600">{course.instructor}</div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-                    </div>
-
-                    {/* EXPANDABLE: 4 QUALITY CHECK COURSES */}
-                    <div className="bg-white rounded-xl shadow-md overflow-hidden">
-                        <button
-                            onClick={() => setShowQualityCheck(!showQualityCheck)}
-                            className="w-full p-6 text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
-                        >
-                            <div>
-                                <h3 className="text-2xl font-bold text-gray-900">🔍 4 Courses in Quality Check</h3>
-                                <p className="text-gray-600 mt-1">Ready for internal review</p>
-                            </div>
-                            <span className="text-3xl text-gray-400">{showQualityCheck ? '−' : '+'}</span>
-                        </button>
-                        {showQualityCheck && (
-                            <div className="px-6 pb-6 bg-gray-50">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                    {[
+                                        { id: 'HUM-130', title: 'Myth in Human Culture', instructor: 'Dr. Melinda Pash' },
                                         { id: 'HIS-131', title: 'American History I', instructor: 'Jessie Kiker' },
                                         { id: 'HIS-132', title: 'American History II', instructor: 'Jessie Kiker' },
                                         { id: 'PSY-150', title: 'General Psychology', instructor: 'Vernette Gilbreath' },
                                         { id: 'SOC-213', title: 'Sociology of the Family', instructor: 'Karen Boyd' }
                                     ].map(course => (
-                                        <div key={course.id} className="bg-white p-4 rounded-lg border-l-4 border-green-500">
+                                        <div key={course.id} className="bg-white p-4 rounded-lg border-l-4 border-blue-500">
                                             <div className="font-bold text-gray-900">{course.id} - {course.title}</div>
                                             <div className="text-sm text-gray-600">{course.instructor}</div>
                                         </div>

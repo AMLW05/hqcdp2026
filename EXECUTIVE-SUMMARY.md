@@ -18,32 +18,26 @@ Currently managing **11 courses** in active development - with **9 courses** rea
 
 **11 courses across all development stages**
 
-### 🟢 Stage 4 - Quality Check (4 courses)
-In quality check and internal review preparation:
+### ✅ Stage 3 - FULLY BUILT & QM-READY (10 courses)
+**100% complete, all modules finished, QM-aligned, awaiting Canvas finalization by course reps before internal review can begin:**
 
 | Course | Instructor | Department |
 |--------|-----------|------------|
+| CSC-113 - AI Fundamentals | Andrew Norris | Computer Science |
+| CSC-114 - Artificial Intelligence I | Andrew Norris | Computer Science |
+| CSC-249 - Data Structures & Algorithms | Andrew Norris | Computer Science |
+| CSC-289 - System Support Project | Andrew Norris | Computer Science |
+| CTS-285 - Systems Design & Analysis | Andrew Norris | Computer Science |
+| HUM-130 - Myth in Human Culture | Dr. Melinda Pash | Humanities |
 | HIS-131 - American History I | Jessie Kiker | History |
 | HIS-132 - American History II | Jessie Kiker | History |
 | PSY-150 - General Psychology | Vernette Gilbreath | Psychology |
 | SOC-213 - Sociology of the Family | Karen Boyd | Sociology |
 
-### 🟡 Stage 3 - FULLY BUILT & QM-READY (6 courses)
-**100% complete, all modules finished, QM-aligned, awaiting course rep approval:**
-
-| Course | Instructor | Department | Progress |
-|--------|-----------|------------|----------|
-| CSC-113 - AI Fundamentals | Andrew Norris | Computer Science | 100% |
-| CSC-114 - Artificial Intelligence I | Andrew Norris | Computer Science | 100% |
-| CSC-249 - Data Structures & Algorithms | Andrew Norris | Computer Science | 100% |
-| CSC-289 - System Support Project | Andrew Norris | Computer Science | 100% |
-| CTS-285 - Systems Design & Analysis | Andrew Norris | Computer Science | 100% |
-| HUM-130 - Myth in Human Culture | Dr. Melinda Pash | Humanities | 75% |
-
 ### 🔴 Stage 1 - Planning (1 course)
 - ARC-111 - Intro to Architectural Technology | Ronald Massie
 
-**Progress Summary**: 1 Certified | 4 Quality Check | **6 Built & QM-Ready** | 1 Planning
+**Progress Summary**: 1 Certified | **10 Built & QM-Ready** | 1 Planning
 
 ---
 
@@ -124,10 +118,9 @@ In quality check and internal review preparation:
 
 **Current Status**:
 - ✅ 1 Certified (MKT-120)
-- 🟢 4 at Quality Check (ready for internal review)
-- 🟡 **6 FULLY BUILT & QM-READY** (100% complete, awaiting rep approval)
+- ✅ **10 FULLY BUILT & QM-READY** (100% complete, awaiting Canvas finalization by course reps)
 
-**Total Work Complete**: 11 courses (1 certified + 4 quality check + 6 built/ready)
+**Total Work Complete**: 11 courses (1 certified + 10 built & QM-ready)
 
 **Remaining**: 9 additional courses to reach goal
 
@@ -136,9 +129,9 @@ In quality check and internal review preparation:
 **Context**: Building new quality processes while preparing for Canvas LMS migration (Fall 2026). Faculty engagement challenges from previous years being addressed through transparent systems and quality-first approach.
 
 **This Week's Impact**:
-- **5 courses 100% complete** (CSC-113, CSC-114, CSC-249, CSC-289, CTS-285) - all modules built, QM-aligned, awaiting final rep approval
-- **4 courses in quality check** (HIS-131, HIS-132, PSY-150, SOC-213) preparing for internal review
-- **11 total courses** in active development across all stages
+- **10 courses 100% complete and QM-aligned** - all modules built, awaiting Canvas finalization by course reps before internal review can begin
+- **Your work is done** on these 10 courses - waiting on course reps to finalize in Canvas LMS
+- **11 total courses** at advanced stages (10 ready + 1 certified)
 - New courses (ARC-111, HUM-130) demonstrate ongoing faculty engagement and expanding program reach
 
 ---
