@@ -52,9 +52,11 @@
 
 ## 🎓 Institutional Impact
 
-**Credly Digital Credentials**
-- **1,000+ badges issued** this week
-- Platform management supporting student achievement recognition
+**Credly Digital Credentials Platform**
+- **Milestone achieved**: 1,000+ earner badges issued
+- **11 new microcredentials** under admin review
+- **New badge design** under review
+- Platform management supporting competency-based student recognition
 
 **Learning Infrastructure**
 - Interactive dashboards for 7 courses
@@ -71,7 +73,8 @@
 | Courses progressed this week | 6 |
 | Stage advancements | +10 |
 | QM Essential Standards met | 22/22 (100%) |
-| Credly badges issued | 1,000+ |
+| Credly earner badges issued (milestone) | 1,000+ |
+| New microcredentials under review | 11 |
 | Interactive dashboards | 2 |
 | Zero-cost courses (OER) | 100% |
 
