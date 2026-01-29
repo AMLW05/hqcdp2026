@@ -492,12 +492,12 @@
                             <div className="bg-white/10 backdrop-blur rounded-xl p-6">
                                 <div className="text-6xl font-bold mb-2">10</div>
                                 <div className="text-lg text-cyan-200">Courses Built & QM-Ready</div>
-                                <div className="text-sm text-cyan-300 mt-2">100% complete, awaiting Canvas finalization</div>
+                                <div className="text-sm text-cyan-300 mt-2">100% complete, QM-aligned</div>
                             </div>
                             <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                                <div className="text-6xl font-bold mb-2">55%</div>
-                                <div className="text-lg text-cyan-200">Toward Goal</div>
-                                <div className="text-sm text-cyan-300 mt-2">11 of 20 by June 30</div>
+                                <div className="text-6xl font-bold mb-2">100%</div>
+                                <div className="text-lg text-cyan-200">QM Standards Met</div>
+                                <div className="text-sm text-cyan-300 mt-2">22/22 Essential Standards</div>
                             </div>
                             <div className="bg-white/10 backdrop-blur rounded-xl p-6">
                                 <div className="text-6xl font-bold mb-2">28</div>
@@ -532,12 +532,12 @@
                                         { id: 'CSC-249', title: 'Data Structures & Algorithms', instructor: 'Andrew Norris' },
                                         { id: 'CSC-289', title: 'System Support Project', instructor: 'Andrew Norris' },
                                         { id: 'CTS-285', title: 'Systems Design & Analysis', instructor: 'Andrew Norris' },
-                                        { id: 'HUM-130', title: 'Myth in Human Culture', instructor: 'Dr. Melinda Pash' },
                                         { id: 'HIS-131', title: 'American History I', instructor: 'Jessie Kiker' },
                                         { id: 'HIS-132', title: 'American History II', instructor: 'Jessie Kiker' },
+                                        { id: 'HUM-130', title: 'Myth in Human Culture', instructor: 'Dr. Melinda Pash' },
                                         { id: 'PSY-150', title: 'General Psychology', instructor: 'Vernette Gilbreath' },
                                         { id: 'SOC-213', title: 'Sociology of the Family', instructor: 'Karen Boyd' }
-                                    ].map(course => (
+                                    ].sort((a, b) => a.id.localeCompare(b.id)).map(course => (
                                         <div key={course.id} className="bg-white p-4 rounded-lg border-l-4 border-blue-500">
                                             <div className="font-bold text-gray-900">{course.id} - {course.title}</div>
                                             <div className="text-sm text-gray-600">{course.instructor}</div>
@@ -563,7 +563,7 @@
                         {showAllCourses && (
                             <div className="px-6 pb-6 bg-gray-50">
                                 <div className="space-y-2">
-                                    {courses.map(course => {
+                                    {[...courses].sort((a, b) => a.id.localeCompare(b.id)).map(course => {
                                         const stageDef = STAGE_DEFINITIONS[course.stage];
                                         return (
                                             <div key={course.id} className="bg-white p-3 rounded-lg border-l-4 flex items-center gap-4" style={{ borderColor: stageDef?.color }}>
