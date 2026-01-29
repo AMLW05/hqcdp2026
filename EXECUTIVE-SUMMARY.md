@@ -10,14 +10,14 @@
 
 **6 courses advanced this week**
 
-| Course | Stage | Next Milestone |
-|--------|-------|----------------|
+| Course | Stage | Status |
+|--------|-------|--------|
 | HIS-131 | 4 - Quality Check | Internal review Feb 4 |
 | HIS-132 | 4 - Quality Check | Internal review Feb 4 |
-| PSY-150 | 3 - Review | Division review |
-| SOC-213 | 3 - Review | Division review |
-| CSC-289 | 3 - Review | Rep review |
-| CSC-249 | 3 - Review | Rep review |
+| PSY-150 | 3 - Review | Built - Division review |
+| SOC-213 | 3 - Review | Built - Division review |
+| CSC-289 | 3 - Review | Built - Rep approval |
+| CSC-249 | 3 - Review | Built - Rep approval |
 
 **Portfolio Status**: 9 courses (2 at Stage 4, 7 at Stage 3)
 
