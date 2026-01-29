@@ -8,18 +8,21 @@
 
 ## 📊 Course Progress
 
-**6 courses advanced this week**
+**9 courses at Quality Check stage this week!**
 
 | Course | Stage | Status |
 |--------|-------|--------|
-| HIS-131 | 4 - Quality Check | Internal review Feb 4 |
-| HIS-132 | 4 - Quality Check | Internal review Feb 4 |
-| PSY-150 | 3 - Review | QM-ready, awaiting rep approval |
-| SOC-213 | 3 - Review | QM-ready, awaiting rep approval |
-| CSC-289 | 3 - Review | QM-ready, awaiting rep approval |
-| CSC-249 | 3 - Review | QM-ready, awaiting rep approval |
+| HIS-131 | 4 - Quality Check | Quality Check |
+| HIS-132 | 4 - Quality Check | Quality Check |
+| PSY-150 | 4 - Quality Check | Quality Check |
+| SOC-213 | 4 - Quality Check | Quality Check |
+| CSC-113 | 4 - Quality Check | Quality Check |
+| CSC-114 | 4 - Quality Check | Quality Check |
+| CSC-249 | 4 - Quality Check | Quality Check |
+| CSC-289 | 4 - Quality Check | Quality Check |
+| CTS-285 | 4 - Quality Check | Quality Check |
 
-**Portfolio Status**: 9 courses (2 at Stage 4, 7 at Stage 3)
+**Portfolio Status**: 9 courses (9 at Stage 4 Quality Check)
 
 ---
 
