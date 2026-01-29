@@ -1,4 +1,19 @@
 {
+  "metadata": {
+    "lastUpdated": "2026-01-29",
+    "analyst": "Angela Westmoreland, M.Ed. | Instructional Support & Quality Assurance Analyst",
+    "qualityStandards": {
+      "qm": "100% alignment to 22 QM Essential Standards",
+      "oer": "Zero-cost course materials",
+      "accessibility": "WCAG 2.1 AA compliant",
+      "canvas": "Full LMS integration packages"
+    },
+    "weeklyHighlights": {
+      "coursesAdvanced": 6,
+      "credlyMilestone": "1,000+ digital badges issued",
+      "infrastructure": "2 interactive dashboards, gamified learning tools, AI resources hub"
+    }
+  },
   "courses": [
     {
       "id": "MKT-120",

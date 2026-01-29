@@ -1,0 +1,102 @@
+{
+  "lastUpdated": "2026-01-29",
+  "title": "HQCDP 2026 Quality Assurance Dashboard",
+  "analyst": {
+    "name": "Angela Westmoreland, M.Ed.",
+    "title": "Instructional Support & Quality Assurance Analyst",
+    "responsibilities": [
+      "Course quality assurance and QM alignment",
+      "Instructional systems architecture",
+      "Credly digital credentials platform management"
+    ]
+  },
+  "qualityMetrics": {
+    "courses": {
+      "total": 9,
+      "inProgress": 9,
+      "stage4": 2,
+      "stage3": 7,
+      "completed": 0
+    },
+    "standards": {
+      "qmAlignment": "100% (22/22 Essential Standards)",
+      "oer": "Zero-cost course materials",
+      "accessibility": "WCAG 2.1 AA compliant",
+      "canvasReady": "Full LMS integration packages",
+      "rsi": "Regular & Substantive Interaction embedded"
+    },
+    "innovation": [
+      "AI-integrated curriculum (CSC-113, CSC-114)",
+      "Gamified learning experiences (SOC-213)",
+      "Cross-program collaboration models (CSC-289 × GRD-242)",
+      "Interactive instructional dashboards",
+      "Experiential learning frameworks"
+    ]
+  },
+  "credentialingMilestone": {
+    "platform": "Credly",
+    "milestone": "1,000+ digital badges issued",
+    "date": "Week of January 29, 2026",
+    "significance": "Demonstrates institutional commitment to competency-based recognition and student achievement tracking"
+  },
+  "learningInfrastructure": {
+    "dashboards": {
+      "norris": {
+        "name": "Norris Dashboard (CSC/CTS Program)",
+        "courses": 5,
+        "features": [
+          "5-course interactive visualization",
+          "AI tools & resources hub",
+          "Skills threading across program",
+          "Alignment matrix (CLOs → Program Outcomes)",
+          "Complete module-level transparency"
+        ],
+        "status": "Complete, deployed"
+      },
+      "history": {
+        "name": "History Dashboard (HIS-131/132)",
+        "courses": 2,
+        "features": [
+          "Dual-course system",
+          "Module-by-module structure",
+          "Assessment mapping",
+          "Supporting internal review process"
+        ],
+        "status": "Complete, supporting Feb 4 review"
+      }
+    },
+    "interactiveLearning": {
+      "soc213Game": {
+        "name": "SOC-213 Interactive Simulation",
+        "type": "Gamified learning experience",
+        "purpose": "Family systems decision-making scenarios",
+        "status": "90% complete, final testing",
+        "impact": "Experiential learning, real-world application"
+      }
+    },
+    "developmentSystems": {
+      "templates": "Sprint planning, GitHub workflows, rubrics",
+      "frameworks": "Cross-program collaboration protocols",
+      "toolkits": "Reusable assessment architectures",
+      "benefit": "Scalable, efficient future course development"
+    }
+  },
+  "weeklyProgress": {
+    "coursesAdvanced": 6,
+    "totalStageMovement": "+10 stages",
+    "highlight": "HIS-131/132 advancing to Quality Check (Feb 4 start)",
+    "infrastructureBuilt": [
+      "Norris Dashboard completed",
+      "AI resources hub integrated",
+      "SOC-213 game nearing completion",
+      "Development toolsets expanded"
+    ]
+  },
+  "institutionalImpact": {
+    "quality": "All courses built to QM Essential Standards (22/22)",
+    "equity": "Zero-cost OER materials, WCAG accessibility",
+    "innovation": "AI integration, gamification, cross-program collaboration",
+    "scalability": "Reusable systems accelerate future development",
+    "recognition": "1,000+ Credly badges issued (student achievement tracking)"
+  }
+}
