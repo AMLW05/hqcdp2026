@@ -479,20 +479,20 @@
             return (
                 <div className="space-y-6">
                     {/* Hero Banner with Key Metrics */}
-                    <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 rounded-2xl shadow-2xl p-8 text-white">
+                    <div className="bg-gradient-to-br from-indigo-600 via-blue-700 to-cyan-800 rounded-2xl shadow-2xl p-8 text-white">
                         <div className="text-center mb-6">
                             <h2 className="text-3xl font-bold mb-2">HQCDP 2026 Progress Dashboard</h2>
-                            <p className="text-purple-200">Angela Westmoreland, M.Ed. | Instructional Support & Quality Assurance Analyst</p>
+                            <p className="text-cyan-200">Angela Westmoreland, M.Ed. | Instructional Support & Quality Assurance Analyst</p>
                         </div>
 
                         {/* COMPLETED WORK CALLOUT */}
-                        <div className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 rounded-xl shadow-2xl p-6 mb-6 text-white">
+                        <div className="bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500 rounded-xl shadow-2xl p-6 mb-6 text-white">
                             <div className="text-center">
-                                <div className="text-3xl font-bold mb-3">🎯 10 COURSES AT ADVANCED STAGES + 1 CERTIFIED</div>
+                                <div className="text-3xl font-bold mb-3">🎯 11 COURSES: 6 BUILT + 4 QUALITY CHECK + 1 CERTIFIED</div>
 
                                 {/* QM-Ready Section */}
                                 <div className="bg-white/20 rounded-lg p-4 mb-3">
-                                    <div className="text-xl font-bold mb-2">🟡 6 FULLY BUILT & QM-READY (100% Complete)</div>
+                                    <div className="text-xl font-bold mb-2">✅ 6 FULLY BUILT & QM-READY (100% Complete)</div>
                                     <div className="text-sm mb-2 opacity-90">All modules complete, QM-aligned, awaiting course rep approval</div>
                                     <div className="flex flex-wrap justify-center gap-2 text-xs font-medium">
                                         <span className="px-3 py-1 bg-white/90 text-gray-900 rounded-full">CSC-113 AI Fundamentals</span>
@@ -506,7 +506,7 @@
 
                                 {/* Quality Check Section */}
                                 <div className="bg-white/20 rounded-lg p-4 mb-3">
-                                    <div className="text-xl font-bold mb-2">🟢 4 IN QUALITY CHECK (Ready for Internal Review)</div>
+                                    <div className="text-xl font-bold mb-2">🔍 4 IN QUALITY CHECK (Ready for Internal Review)</div>
                                     <div className="flex flex-wrap justify-center gap-2 text-xs font-medium">
                                         <span className="px-3 py-1 bg-white/90 text-gray-900 rounded-full">HIS-131 American History I</span>
                                         <span className="px-3 py-1 bg-white/90 text-gray-900 rounded-full">HIS-132 American History II</span>
@@ -517,9 +517,9 @@
 
                                 {/* Certified Section */}
                                 <div className="bg-white/20 rounded-lg p-3">
-                                    <div className="text-lg font-bold mb-1">🟣 1 CERTIFIED</div>
+                                    <div className="text-lg font-bold mb-1">🏆 1 CERTIFIED</div>
                                     <div className="text-xs font-medium">
-                                        <span className="px-3 py-1 bg-purple-600 text-white rounded-full">MKT-120 Principles of Marketing</span>
+                                        <span className="px-3 py-1 bg-indigo-600 text-white rounded-full">MKT-120 Principles of Marketing</span>
                                     </div>
                                 </div>
 
@@ -532,24 +532,24 @@
                         {/* Top Stats Row */}
                         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
                             <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
-                                <div className="text-4xl font-bold">{stats.total}</div>
-                                <div className="text-sm text-purple-200 mt-1">Total Courses</div>
+                                <div className="text-4xl font-bold">11</div>
+                                <div className="text-sm text-cyan-200 mt-1">Advanced Courses</div>
                             </div>
                             <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
-                                <div className="text-4xl font-bold">{stageBreakdown[4] || 0}</div>
-                                <div className="text-sm text-purple-200 mt-1">🟢 Quality Check</div>
+                                <div className="text-4xl font-bold">6</div>
+                                <div className="text-sm text-cyan-200 mt-1">✅ Built & QM-Ready</div>
                             </div>
                             <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
-                                <div className="text-4xl font-bold">{stageBreakdown[3] || 0}</div>
-                                <div className="text-sm text-purple-200 mt-1">🟡 Built & QM-Ready</div>
+                                <div className="text-4xl font-bold">4</div>
+                                <div className="text-sm text-cyan-200 mt-1">🔍 Quality Check</div>
                             </div>
                             <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
-                                <div className="text-4xl font-bold">{stageBreakdown[1] || 0}</div>
-                                <div className="text-sm text-purple-200 mt-1">🔴 Planning</div>
+                                <div className="text-4xl font-bold">1</div>
+                                <div className="text-sm text-cyan-200 mt-1">🏆 Certified</div>
                             </div>
                             <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
-                                <div className="text-4xl font-bold">{stats.certified}</div>
-                                <div className="text-sm text-purple-200 mt-1">🟣 Certified</div>
+                                <div className="text-4xl font-bold">28</div>
+                                <div className="text-sm text-cyan-200 mt-1">Total Portfolio</div>
                             </div>
                         </div>
 
@@ -558,21 +558,21 @@
                             <div className="text-lg font-bold mb-2">🎯 Progress Toward Goal</div>
                             <div className="flex items-center justify-center gap-6 text-sm">
                                 <div>
-                                    <span className="font-bold text-2xl">{stats.certified + (stageBreakdown[4] || 0) + (stageBreakdown[3] || 0)}</span>
-                                    <span className="text-purple-200"> / 20 courses</span>
+                                    <span className="font-bold text-2xl">11</span>
+                                    <span className="text-cyan-200"> / 20 courses</span>
                                 </div>
-                                <div className="text-purple-200">
+                                <div className="text-cyan-200">
                                     Target: June 30, 2026 | 5 months remaining
                                 </div>
                             </div>
                             <div className="w-full bg-white/20 rounded-full h-3 mt-3">
                                 <div
                                     className="bg-white rounded-full h-3 transition-all"
-                                    style={{ width: `${((stats.certified + (stageBreakdown[4] || 0) + (stageBreakdown[3] || 0)) / 20) * 100}%` }}
+                                    style={{ width: '55%' }}
                                 />
                             </div>
-                            <div className="text-xs text-purple-200 mt-2">
-                                Includes {stageBreakdown[3] || 0} QM-ready courses awaiting rep approval + {stageBreakdown[4] || 0} in quality check | Canvas LMS Migration Fall 2026
+                            <div className="text-xs text-cyan-200 mt-2">
+                                6 QM-ready + 4 in quality check + 1 certified = 55% of goal | Canvas LMS Migration Fall 2026
                             </div>
                         </div>
 
@@ -580,7 +580,7 @@
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                             <div className="bg-white/10 backdrop-blur rounded-lg p-4">
                                 <div className="font-bold mb-2">✨ Quality Standards</div>
-                                <div className="space-y-1 text-purple-100">
+                                <div className="space-y-1 text-cyan-100">
                                     <div>✅ 100% QM Alignment (22/22 Standards)</div>
                                     <div>✅ Zero-Cost OER Materials</div>
                                     <div>✅ WCAG 2.1 AA Accessibility</div>
@@ -589,7 +589,7 @@
                             </div>
                             <div className="bg-white/10 backdrop-blur rounded-lg p-4">
                                 <div className="font-bold mb-2">🎓 Institutional Impact</div>
-                                <div className="space-y-1 text-purple-100">
+                                <div className="space-y-1 text-cyan-100">
                                     <div>🏆 1,000+ Credly Badges Issued</div>
                                     <div>📋 11 New Microcredentials (Review)</div>
                                     <div>🎨 New Badge Design (Review)</div>
