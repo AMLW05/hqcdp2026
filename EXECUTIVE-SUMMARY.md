@@ -14,10 +14,10 @@
 |--------|-------|--------|
 | HIS-131 | 4 - Quality Check | Internal review Feb 4 |
 | HIS-132 | 4 - Quality Check | Internal review Feb 4 |
-| PSY-150 | 3 - Review | Built - Division review |
-| SOC-213 | 3 - Review | Built - Division review |
-| CSC-289 | 3 - Review | Built - Rep approval |
-| CSC-249 | 3 - Review | Built - Rep approval |
+| PSY-150 | 3 - Review | QM-ready, awaiting rep approval |
+| SOC-213 | 3 - Review | QM-ready, awaiting rep approval |
+| CSC-289 | 3 - Review | QM-ready, awaiting rep approval |
+| CSC-249 | 3 - Review | QM-ready, awaiting rep approval |
 
 **Portfolio Status**: 9 courses (2 at Stage 4, 7 at Stage 3)
 

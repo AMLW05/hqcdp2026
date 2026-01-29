@@ -212,7 +212,7 @@
       "instructor": "Andrew Norris",
       "cte": true,
       "stage": 3,
-      "status": "Built - Awaiting Rep Approval",
+      "status": "QM-Ready - Awaiting Rep Approval",
       "instructorEmail": "andrewnorris@ftcc.edu",
       "department": "CSC",
       "courseRep": "Andrew Norris",
@@ -224,7 +224,7 @@
       "deadline": "2026-06-30",
       "lastUpdated": "2026-01-29",
       "notes": "",
-      "publicNotes": "Built - Awaiting rep approval",
+      "publicNotes": "QM-ready, awaiting rep approval",
       "archived": false,
       "documents": [
         {
@@ -440,7 +440,7 @@
       "instructor": "Vernette Gilbreath",
       "cte": false,
       "stage": 3,
-      "status": "Built - Division Review",
+      "status": "QM-Ready - Awaiting Rep Approval",
       "instructorEmail": "vernettegilbrea@ftcc.edu",
       "department": "PSY",
       "courseRep": "Vernette Gilbreath",
@@ -452,7 +452,7 @@
       "deadline": "2026-06-30",
       "lastUpdated": "2026-01-29",
       "notes": "",
-      "publicNotes": "Built - Division review",
+      "publicNotes": "QM-ready, awaiting rep approval",
       "archived": false,
       "documents": [
         {
@@ -478,7 +478,7 @@
       "instructor": "Karen Boyd",
       "cte": false,
       "stage": 3,
-      "status": "Built - Division Review",
+      "status": "QM-Ready - Awaiting Rep Approval",
       "instructorEmail": "karenboyd@ftcc.edu",
       "department": "SOC",
       "courseRep": "Karen Boyd",
@@ -490,7 +490,7 @@
       "deadline": "2026-06-30",
       "lastUpdated": "2026-01-29",
       "notes": "",
-      "publicNotes": "Built - Division review",
+      "publicNotes": "QM-ready, awaiting rep approval",
       "archived": false,
       "documents": [
         {
@@ -972,7 +972,7 @@
       "instructor": "Andrew Norris",
       "cte": true,
       "stage": 3,
-      "status": "Built - Awaiting Rep Approval",
+      "status": "QM-Ready - Awaiting Rep Approval",
       "instructorEmail": "andrewnorris@ftcc.edu",
       "department": "CSC",
       "courseRep": "Andrew Norris",
@@ -984,7 +984,7 @@
       "deadline": "2026-06-30",
       "lastUpdated": "2026-01-29",
       "notes": "",
-      "publicNotes": "Built - Awaiting rep approval",
+      "publicNotes": "QM-ready, awaiting rep approval",
       "archived": false,
       "documents": [
         {
