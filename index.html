@@ -35,19 +35,20 @@
         const { useState, useEffect, useMemo, useCallback } = React;
 
         // ==================== STAGE DEFINITIONS ====================
-        // 5-Stage Simplified System
+        // 6-Stage ROYGBIV System
         const STAGE_DEFINITIONS = {
-            1: { name: 'Design', color: '#ef4444', icon: '📋', shortName: 'Design' },
-            2: { name: 'Building', color: '#f97316', icon: '🔨', shortName: 'Building' },
-            3: { name: 'Review', color: '#eab308', icon: '👀', shortName: 'Review' },
-            4: { name: 'Quality Check', color: '#10b981', icon: '✅', shortName: 'Quality Check' },
-            5: { name: 'Ready', color: '#8b5cf6', icon: '🎓', shortName: 'Ready' }
+            1: { name: 'Planning', color: '#dc2626', icon: '🔴', shortName: 'Planning', number: '1' },              // RED
+            2: { name: 'Active Development', color: '#ea580c', icon: '🟠', shortName: 'Building', number: '2' },    // ORANGE
+            3: { name: 'Course Rep Review', color: '#ca8a04', icon: '🟡', shortName: 'Rep Review', number: '3' },   // YELLOW/GOLD
+            4: { name: 'Internal Review', color: '#16a34a', icon: '🟢', shortName: 'Quality Check', number: '4' },  // GREEN
+            5: { name: 'Post-Review', color: '#2563eb', icon: '🔵', shortName: 'Final Review', number: '5' },       // BLUE
+            6: { name: 'Certified', color: '#9333ea', icon: '🟣', shortName: 'Certified', number: '6' }             // VIOLET/PURPLE
         };
 
         // ==================== DATA MANAGER ====================
         const DataManager = {
-            STORAGE_KEY: 'hqcdp_courses_v2',
-            BACKUP_KEY: 'hqcdp_backup_v2',
+            STORAGE_KEY: 'hqcdp_courses_v3_jan29',  // Updated version to force cache refresh
+            BACKUP_KEY: 'hqcdp_backup_v3',
 
             load: () => {
                 try {
@@ -272,11 +273,11 @@
 
                 const total = visibleCourses.length;
                 const cteCount = visibleCourses.filter(c => c.cte).length;
-                const certified = visibleCourses.filter(c => c.stage === 5).length;
+                const certified = visibleCourses.filter(c => c.stage === 6).length;
                 const atRisk = visibleCourses.filter(c => {
                     const deadline = new Date(c.deadline);
                     const today = new Date();
-                    return deadline < today && c.stage !== 5;
+                    return deadline < today && c.stage !== 6;
                 }).length;
                 const avgProgress = total > 0
                     ? Math.round(visibleCourses.reduce((sum, c) => sum + (c.progress || 0), 0) / total)
@@ -469,21 +470,82 @@
             const cteCourses = courses.filter(c => c.cte).sort((a, b) => a.id.localeCompare(b.id));
             const nonCteCourses = courses.filter(c => !c.cte).sort((a, b) => a.id.localeCompare(b.id));
 
+            // Calculate stage breakdown
+            const stageBreakdown = courses.reduce((acc, c) => {
+                acc[c.stage] = (acc[c.stage] || 0) + 1;
+                return acc;
+            }, {});
+
             return (
                 <div className="space-y-6">
-                    {/* Summary Stats */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl shadow-lg p-6 text-white">
-                            <div className="text-4xl font-bold mb-2">{stats.total}</div>
-                            <div className="text-sm opacity-90 font-medium">Total Courses</div>
+                    {/* Hero Banner with Key Metrics */}
+                    <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 rounded-2xl shadow-2xl p-8 text-white">
+                        <div className="text-center mb-6">
+                            <h2 className="text-3xl font-bold mb-2">HQCDP 2026 Progress Dashboard</h2>
+                            <p className="text-purple-200">Angela Westmoreland, M.Ed. | Instructional Support & Quality Assurance Analyst</p>
                         </div>
-                        <div className="bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl shadow-lg p-6 text-white">
-                            <div className="text-4xl font-bold mb-2">{stats.cteCount}</div>
-                            <div className="text-sm opacity-90 font-medium">CTE Courses</div>
+
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                            <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
+                                <div className="text-4xl font-bold">{stats.total}</div>
+                                <div className="text-sm text-purple-200 mt-1">Total Courses</div>
+                            </div>
+                            <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
+                                <div className="text-4xl font-bold">{stageBreakdown[4] || 0}</div>
+                                <div className="text-sm text-purple-200 mt-1">🟢 Quality Check</div>
+                            </div>
+                            <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
+                                <div className="text-4xl font-bold">{stageBreakdown[3] || 0}</div>
+                                <div className="text-sm text-purple-200 mt-1">🟡 Rep Review</div>
+                            </div>
+                            <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
+                                <div className="text-4xl font-bold">{stats.certified}</div>
+                                <div className="text-sm text-purple-200 mt-1">🟣 Certified</div>
+                            </div>
                         </div>
-                        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg p-6 text-white">
-                            <div className="text-4xl font-bold mb-2">{stats.total - stats.cteCount}</div>
-                            <div className="text-sm opacity-90 font-medium">Non-CTE Courses</div>
+
+                        {/* Quality Standards & Achievements */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div className="bg-white/10 backdrop-blur rounded-lg p-4">
+                                <div className="font-bold mb-2">✨ Quality Standards</div>
+                                <div className="space-y-1 text-purple-100">
+                                    <div>✅ 100% QM Alignment (22/22 Standards)</div>
+                                    <div>✅ Zero-Cost OER Materials</div>
+                                    <div>✅ WCAG 2.1 AA Accessibility</div>
+                                    <div>✅ Canvas LMS Integration</div>
+                                </div>
+                            </div>
+                            <div className="bg-white/10 backdrop-blur rounded-lg p-4">
+                                <div className="font-bold mb-2">🎓 Institutional Impact</div>
+                                <div className="space-y-1 text-purple-100">
+                                    <div>🏆 1,000+ Credly Badges Issued</div>
+                                    <div>📋 11 New Microcredentials (Review)</div>
+                                    <div>🎨 New Badge Design (Review)</div>
+                                    <div>🛠️ 2 Interactive Dashboards Built</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Stage Legend */}
+                    <div className="bg-white rounded-xl shadow-md p-4">
+                        <h3 className="font-bold text-gray-900 mb-3">📊 Stage Progress Key</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-6 gap-2">
+                            {Object.entries(STAGE_DEFINITIONS).map(([key, def]) => (
+                                <div key={key} className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{
+                                    backgroundColor: `${def.color}15`,
+                                    borderLeft: `4px solid ${def.color}`
+                                }}>
+                                    <span className="font-bold text-lg">{def.icon}</span>
+                                    <div className="text-xs">
+                                        <div className="font-bold" style={{ color: def.color }}>Stage {def.number}</div>
+                                        <div className="text-gray-600">{def.shortName}</div>
+                                    </div>
+                                    <div className="ml-auto font-bold text-lg" style={{ color: def.color }}>
+                                        {stageBreakdown[parseInt(key)] || 0}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
@@ -496,15 +558,16 @@
                             {cteCourses.map(course => {
                                 const stageDef = STAGE_DEFINITIONS[course.stage];
                                 return (
-                                    <div key={course.id} className="flex items-center gap-4 p-3 hover:bg-amber-50 rounded-lg transition-colors">
+                                    <div key={course.id} className="flex items-center gap-4 p-3 hover:bg-amber-50 rounded-lg transition-colors border-l-4" style={{ borderColor: stageDef?.color }}>
                                         <span className="font-bold text-amber-900 min-w-[100px]">{course.id}</span>
                                         <span className="flex-1 text-gray-900">{course.title}</span>
-                                        <span className="stage-badge" style={{
-                                            backgroundColor: `${stageDef?.color}20`,
-                                            color: stageDef?.color
-                                        }}>
-                                            {stageDef?.icon} {course.status || stageDef?.shortName}
-                                        </span>
+                                        <div className="flex items-center gap-2">
+                                            <span className="font-bold text-2xl">{stageDef?.icon}</span>
+                                            <div className="text-sm">
+                                                <div className="font-bold" style={{ color: stageDef?.color }}>Stage {stageDef?.number}</div>
+                                                <div className="text-gray-600 text-xs">{course.status || stageDef?.shortName}</div>
+                                            </div>
+                                        </div>
                                         <span className="text-gray-600 min-w-[150px] text-right">{course.instructor}</span>
                                     </div>
                                 );
@@ -522,15 +585,16 @@
                                 {nonCteCourses.map(course => {
                                     const stageDef = STAGE_DEFINITIONS[course.stage];
                                     return (
-                                        <div key={course.id} className="flex items-center gap-4 p-3 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <div key={course.id} className="flex items-center gap-4 p-3 hover:bg-blue-50 rounded-lg transition-colors border-l-4" style={{ borderColor: stageDef?.color }}>
                                             <span className="font-bold text-blue-900 min-w-[100px]">{course.id}</span>
                                             <span className="flex-1 text-gray-900">{course.title}</span>
-                                            <span className="stage-badge" style={{
-                                                backgroundColor: `${stageDef?.color}20`,
-                                                color: stageDef?.color
-                                            }}>
-                                                {stageDef?.icon} {course.status || stageDef?.shortName}
-                                            </span>
+                                            <div className="flex items-center gap-2">
+                                                <span className="font-bold text-2xl">{stageDef?.icon}</span>
+                                                <div className="text-sm">
+                                                    <div className="font-bold" style={{ color: stageDef?.color }}>Stage {stageDef?.number}</div>
+                                                    <div className="text-gray-600 text-xs">{course.status || stageDef?.shortName}</div>
+                                                </div>
+                                            </div>
                                             <span className="text-gray-600 min-w-[150px] text-right">{course.instructor}</span>
                                         </div>
                                     );
@@ -568,7 +632,7 @@
         const CourseTimeline = ({ courses }) => {
             const sortedCourses = useMemo(() => {
                 return [...courses]
-                    .filter(c => c.stage !== 5)
+                    .filter(c => c.stage !== 6)
                     .sort((a, b) => new Date(a.deadline) - new Date(b.deadline))
                     .slice(0, 10);
             }, [courses]);
