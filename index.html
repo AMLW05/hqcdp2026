@@ -35,14 +35,13 @@
         const { useState, useEffect, useMemo, useCallback } = React;
 
         // ==================== STAGE DEFINITIONS ====================
-        // 6-Stage ROYGBIV Pyramid Model
+        // 5-Stage Simplified System
         const STAGE_DEFINITIONS = {
-            1: { name: 'Planning', color: '#ef4444', icon: '🔴', shortName: 'Planning' },              // RED
-            2: { name: 'Active Development', color: '#f97316', icon: '🟠', shortName: 'Building' },    // ORANGE
-            3: { name: 'Course Rep Review', color: '#eab308', icon: '🟡', shortName: 'Rep Review' },   // YELLOW
-            4: { name: 'Internal Review', color: '#10b981', icon: '🟢', shortName: 'Internal Review' }, // GREEN
-            5: { name: 'Post-Review', color: '#3b82f6', icon: '🔵', shortName: 'Post-Review' },        // BLUE
-            6: { name: 'Certified', color: '#8b5cf6', icon: '🟣', shortName: 'Certified' }             // VIOLET
+            1: { name: 'Design', color: '#ef4444', icon: '📋', shortName: 'Design' },
+            2: { name: 'Building', color: '#f97316', icon: '🔨', shortName: 'Building' },
+            3: { name: 'Review', color: '#eab308', icon: '👀', shortName: 'Review' },
+            4: { name: 'Quality Check', color: '#10b981', icon: '✅', shortName: 'Quality Check' },
+            5: { name: 'Ready', color: '#8b5cf6', icon: '🎓', shortName: 'Ready' }
         };
 
         // ==================== DATA MANAGER ====================
@@ -273,11 +272,11 @@
 
                 const total = visibleCourses.length;
                 const cteCount = visibleCourses.filter(c => c.cte).length;
-                const certified = visibleCourses.filter(c => c.stage === 7).length;
+                const certified = visibleCourses.filter(c => c.stage === 5).length;
                 const atRisk = visibleCourses.filter(c => {
                     const deadline = new Date(c.deadline);
                     const today = new Date();
-                    return deadline < today && c.stage !== 7 && c.stage !== 'H';
+                    return deadline < today && c.stage !== 5;
                 }).length;
                 const avgProgress = total > 0
                     ? Math.round(visibleCourses.reduce((sum, c) => sum + (c.progress || 0), 0) / total)
@@ -504,7 +503,7 @@
                                             backgroundColor: `${stageDef?.color}20`,
                                             color: stageDef?.color
                                         }}>
-                                            {stageDef?.icon} {stageDef?.shortName}
+                                            {stageDef?.icon} {course.status || stageDef?.shortName}
                                         </span>
                                         <span className="text-gray-600 min-w-[150px] text-right">{course.instructor}</span>
                                     </div>
@@ -530,7 +529,7 @@
                                                 backgroundColor: `${stageDef?.color}20`,
                                                 color: stageDef?.color
                                             }}>
-                                                {stageDef?.icon} {stageDef?.shortName}
+                                                {stageDef?.icon} {course.status || stageDef?.shortName}
                                             </span>
                                             <span className="text-gray-600 min-w-[150px] text-right">{course.instructor}</span>
                                         </div>
@@ -569,7 +568,7 @@
         const CourseTimeline = ({ courses }) => {
             const sortedCourses = useMemo(() => {
                 return [...courses]
-                    .filter(c => c.stage !== 7)
+                    .filter(c => c.stage !== 5)
                     .sort((a, b) => new Date(a.deadline) - new Date(b.deadline))
                     .slice(0, 10);
             }, [courses]);
