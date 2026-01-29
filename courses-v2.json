@@ -9,10 +9,21 @@
       "canvas": "Full LMS integration packages"
     },
     "weeklyHighlights": {
+      "totalCourses": 11,
       "coursesAdvanced": 9,
+      "stage4QualityCheck": 9,
+      "stage3RepReview": 1,
+      "stage1Planning": 1,
+      "certified": 1,
       "credlyMilestone": "1,000+ earner badges issued milestone achieved",
       "credlyDevelopment": "11 new microcredentials under admin review, new badge design under review",
       "infrastructure": "2 interactive dashboards, gamified learning tools, AI resources hub"
+    },
+    "context": {
+      "goal": "20 courses internally reviewed by June 30, 2026",
+      "currentProgress": "9 courses at Quality Check (Stage 4), significant momentum this week",
+      "challenge": "Canvas LMS migration Fall 2026 - building new processes alongside platform transition",
+      "thisWeek": "11 courses in active development across all stages - major progress from planning through quality review"
     }
   },
   "courses": [
@@ -35,6 +46,82 @@
       "lastUpdated": "2026-01-14",
       "notes": "",
       "publicNotes": "Certified",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "ARC-111",
+      "title": "Intro to Architectural Technology",
+      "instructor": "Ronald Massie",
+      "cte": true,
+      "stage": 1,
+      "status": "Planning",
+      "instructorEmail": "ronaldmassie@ftcc.edu",
+      "department": "ARC",
+      "courseRep": "Ronald Massie",
+      "complexity": "Medium",
+      "microstage": 1,
+      "progress": 15,
+      "totalModules": 10,
+      "modulesCompleted": 0,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-29",
+      "notes": "",
+      "publicNotes": "Planning",
+      "archived": false,
+      "documents": [
+        {
+          "name": "Course Map",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "Syllabus",
+          "url": "",
+          "status": "Pending"
+        },
+        {
+          "name": "HIDOC Sheet",
+          "url": "",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "HUM-130",
+      "title": "Myth in Human Culture",
+      "instructor": "Dr. Melinda Pash",
+      "cte": false,
+      "stage": 3,
+      "status": "Course Rep Review",
+      "instructorEmail": "melindapash@ftcc.edu",
+      "department": "HUM",
+      "courseRep": "Dr. Melinda Pash",
+      "complexity": "Medium",
+      "microstage": 3,
+      "progress": 75,
+      "totalModules": 10,
+      "modulesCompleted": 8,
+      "deadline": "2026-06-30",
+      "lastUpdated": "2026-01-29",
+      "notes": "",
+      "publicNotes": "Course Rep Review",
       "archived": false,
       "documents": [
         {

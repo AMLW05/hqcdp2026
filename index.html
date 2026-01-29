@@ -485,7 +485,8 @@
                             <p className="text-purple-200">Angela Westmoreland, M.Ed. | Instructional Support & Quality Assurance Analyst</p>
                         </div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        {/* Top Stats Row */}
+                        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
                             <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
                                 <div className="text-4xl font-bold">{stats.total}</div>
                                 <div className="text-sm text-purple-200 mt-1">Total Courses</div>
@@ -499,8 +500,35 @@
                                 <div className="text-sm text-purple-200 mt-1">🟡 Rep Review</div>
                             </div>
                             <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
+                                <div className="text-4xl font-bold">{stageBreakdown[1] || 0}</div>
+                                <div className="text-sm text-purple-200 mt-1">🔴 Planning</div>
+                            </div>
+                            <div className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
                                 <div className="text-4xl font-bold">{stats.certified}</div>
                                 <div className="text-sm text-purple-200 mt-1">🟣 Certified</div>
+                            </div>
+                        </div>
+
+                        {/* Goal Progress Banner */}
+                        <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-6 text-center">
+                            <div className="text-lg font-bold mb-2">🎯 Progress Toward Goal</div>
+                            <div className="flex items-center justify-center gap-6 text-sm">
+                                <div>
+                                    <span className="font-bold text-2xl">{stats.certified + (stageBreakdown[4] || 0)}</span>
+                                    <span className="text-purple-200"> / 20 courses</span>
+                                </div>
+                                <div className="text-purple-200">
+                                    Target: June 30, 2026 | 5 months remaining
+                                </div>
+                            </div>
+                            <div className="w-full bg-white/20 rounded-full h-3 mt-3">
+                                <div
+                                    className="bg-white rounded-full h-3 transition-all"
+                                    style={{ width: `${((stats.certified + (stageBreakdown[4] || 0)) / 20) * 100}%` }}
+                                />
+                            </div>
+                            <div className="text-xs text-purple-200 mt-2">
+                                Canvas LMS Migration Fall 2026 | Building quality processes alongside platform transition
                             </div>
                         </div>
 

@@ -6,23 +6,40 @@
 
 ---
 
-## 📊 Course Progress
+## 🎯 The Goal
 
-**9 courses at Quality Check stage this week!**
+**20 courses internally reviewed by June 30, 2026**
 
-| Course | Stage | Status |
-|--------|-------|--------|
-| HIS-131 | 4 - Quality Check | Quality Check |
-| HIS-132 | 4 - Quality Check | Quality Check |
-| PSY-150 | 4 - Quality Check | Quality Check |
-| SOC-213 | 4 - Quality Check | Quality Check |
-| CSC-113 | 4 - Quality Check | Quality Check |
-| CSC-114 | 4 - Quality Check | Quality Check |
-| CSC-249 | 4 - Quality Check | Quality Check |
-| CSC-289 | 4 - Quality Check | Quality Check |
-| CTS-285 | 4 - Quality Check | Quality Check |
+Currently managing **11 courses** in active development - with **9 courses** reaching Quality Check stage this week, representing significant momentum despite Canvas LMS migration challenges.
 
-**Portfolio Status**: 9 courses (9 at Stage 4 Quality Check)
+---
+
+## 📊 This Week's Movement
+
+**11 courses across all development stages**
+
+### 🟢 Stage 4 - Quality Check (9 courses)
+Major progress - 9 courses now QM-ready and awaiting internal review:
+
+| Course | Instructor | Department |
+|--------|-----------|------------|
+| HIS-131 - American History I | Jessie Kiker | History |
+| HIS-132 - American History II | Jessie Kiker | History |
+| PSY-150 - General Psychology | Vernette Gilbreath | Psychology |
+| SOC-213 - Sociology of the Family | Karen Boyd | Sociology |
+| CSC-113 - AI Fundamentals | Andrew Norris | Computer Science |
+| CSC-114 - Artificial Intelligence I | Andrew Norris | Computer Science |
+| CSC-249 - Data Structures & Algorithms | Andrew Norris | Computer Science |
+| CSC-289 - System Support Project | Andrew Norris | Computer Science |
+| CTS-285 - Systems Design & Analysis | Andrew Norris | Computer Science |
+
+### 🟡 Stage 3 - Course Rep Review (1 course)
+- HUM-130 - Myth in Human Culture | Dr. Melinda Pash
+
+### 🔴 Stage 1 - Planning (1 course)
+- ARC-111 - Intro to Architectural Technology | Ronald Massie
+
+**Progress Summary**: 1 Certified | 9 Quality Check | 1 Rep Review | 1 Planning
 
 ---
 
@@ -97,7 +114,26 @@
 
 ---
 
-**Next Week**: HIS-131/132 internal reviews begin Feb 4. Continue supporting division reviews for PSY-150, SOC-213.
+## 📈 Progress Toward Goal
+
+**Target**: 20 courses internally reviewed by June 30, 2026
+
+**Current Status**:
+- ✅ 1 Certified (MKT-120)
+- 🟢 9 at Quality Check (ready for internal review)
+- 🟡 1 in Rep Review (advancing toward Quality Check)
+
+**Remaining**: 9 additional courses to reach goal
+
+**Timeline**: 5 months remaining (150 days)
+
+**Context**: Building new quality processes while preparing for Canvas LMS migration (Fall 2026). Faculty engagement challenges from previous years being addressed through transparent systems and quality-first approach.
+
+**This Week's Impact**: 9 courses advanced to Quality Check represents major pipeline progress. New courses (ARC-111, HUM-130) demonstrate ongoing faculty engagement and expanding program reach.
+
+---
+
+**Next Week**: HIS-131/132 internal reviews begin Feb 4. Continue supporting quality checks across remaining 7 courses.
 
 ---
 
