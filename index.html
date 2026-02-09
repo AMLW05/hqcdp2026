@@ -538,9 +538,35 @@
                             </div>
                         </div>
 
+                        {/* Current Year Reviews - 2025 */}
+                        <div className="bg-white rounded-lg p-6 shadow mb-6">
+                            <h3 className="text-lg font-bold text-gray-900 mb-4">🎯 Current Year: 2025 Reviews</h3>
+                            <details className="group" open>
+                                <summary className="cursor-pointer list-none flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg hover:from-green-100 hover:to-emerald-100 transition-all border border-green-200">
+                                    <span className="font-bold text-green-800">📅 2025 Reviews (13 courses)</span>
+                                    <span className="text-green-600 group-open:rotate-180 transition-transform">▼</span>
+                                </summary>
+                                <div className="mt-2 p-4 bg-white rounded-lg border border-gray-200 text-sm space-y-1">
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-purple-600">COM 120</span> - Intro to Interpersonal Communication</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">BIO 111</span> - General Biology I</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">EDU 187</span> - Teaching and Learning for All</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">EDU 259</span> - Curriculum Planning</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">BUS 240</span> - Business Ethics</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">OST 288</span> - Medical Office Admin Capstone</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">PAD 151</span> - Intro to Public Admin</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-orange-600">GRD 282</span> - Advertising Copywriting</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-pink-600">FSE 120</span> - Embalming Microbiology</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">CJC 132</span> - Court Procedure & Evidence</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">EPT 130</span> - Mitigation & Preparedness</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">EPT 140</span> - Emergency Management</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">FIP 230</span> - Chem of Hazardous Mat I</div>
+                                </div>
+                            </details>
+                        </div>
+
                         {/* Reviews by Division */}
-                        <div className="bg-white rounded-lg p-6 shadow">
-                            <h3 className="text-lg font-bold text-gray-900 mb-4">Reviews by Division</h3>
+                        <div className="bg-white rounded-lg p-6 shadow mb-6">
+                            <h3 className="text-lg font-bold text-gray-900 mb-4">📊 Reviews by Division (All Years)</h3>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                                 <div className="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200">
                                     <span className="text-sm font-medium text-gray-700">Public Safety</span>
@@ -571,31 +597,13 @@
                                     <span className="text-xl font-bold text-pink-600">1</span>
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Expandable Year Details */}
-                            <details className="mt-6 group">
-                                <summary className="cursor-pointer list-none flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg hover:from-green-100 hover:to-emerald-100 transition-all border border-green-200">
-                                    <span className="font-bold text-green-800">📅 2025 Reviews (13 courses)</span>
-                                    <span className="text-green-600 group-open:rotate-180 transition-transform">▼</span>
-                                </summary>
-                                <div className="mt-2 p-4 bg-white rounded-lg border border-gray-200 text-sm space-y-1">
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-purple-600">COM 120</span> - Intro to Interpersonal Communication</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">BIO 111</span> - General Biology I</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">EDU 187</span> - Teaching and Learning for All</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">EDU 259</span> - Curriculum Planning</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">BUS 240</span> - Business Ethics</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">OST 288</span> - Medical Office Admin Capstone</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">PAD 151</span> - Intro to Public Admin</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-orange-600">GRD 282</span> - Advertising Copywriting</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-pink-600">FSE 120</span> - Embalming Microbiology</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">CJC 132</span> - Court Procedure & Evidence</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">EPT 130</span> - Mitigation & Preparedness</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">EPT 140</span> - Emergency Management</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">FIP 230</span> - Chem of Hazardous Mat I</div>
-                                </div>
-                            </details>
+                        {/* Historical Reviews */}
+                        <div className="bg-white rounded-lg p-6 shadow">
+                            <h3 className="text-lg font-bold text-gray-900 mb-4">📚 Historical Reviews</h3>
 
-                            <details className="mt-4 group">
+                            <details className="group">
                                 <summary className="cursor-pointer list-none flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg hover:from-blue-100 hover:to-cyan-100 transition-all border border-blue-200">
                                     <span className="font-bold text-blue-800">📅 2024 Reviews (18 courses)</span>
                                     <span className="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
@@ -863,9 +871,35 @@
                             </div>
                         </div>
 
+                        {/* Current Year Reviews - 2025 */}
+                        <div className="bg-white rounded-lg p-6 shadow mb-6">
+                            <h3 className="text-lg font-bold text-gray-900 mb-4">🎯 Current Year: 2025 Reviews</h3>
+                            <details className="group" open>
+                                <summary className="cursor-pointer list-none flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg hover:from-green-100 hover:to-emerald-100 transition-all border border-green-200">
+                                    <span className="font-bold text-green-800">📅 2025 Reviews (13 courses)</span>
+                                    <span className="text-green-600 group-open:rotate-180 transition-transform">▼</span>
+                                </summary>
+                                <div className="mt-2 p-4 bg-white rounded-lg border border-gray-200 text-sm space-y-1">
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-purple-600">COM 120</span> - Intro to Interpersonal Communication</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">BIO 111</span> - General Biology I</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">EDU 187</span> - Teaching and Learning for All</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">EDU 259</span> - Curriculum Planning</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">BUS 240</span> - Business Ethics</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">OST 288</span> - Medical Office Admin Capstone</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">PAD 151</span> - Intro to Public Admin</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-orange-600">GRD 282</span> - Advertising Copywriting</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-pink-600">FSE 120</span> - Embalming Microbiology</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">CJC 132</span> - Court Procedure & Evidence</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">EPT 130</span> - Mitigation & Preparedness</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">EPT 140</span> - Emergency Management</div>
+                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">FIP 230</span> - Chem of Hazardous Mat I</div>
+                                </div>
+                            </details>
+                        </div>
+
                         {/* Reviews by Division */}
-                        <div className="bg-white rounded-lg p-6 shadow">
-                            <h3 className="text-lg font-bold text-gray-900 mb-4">Reviews by Division</h3>
+                        <div className="bg-white rounded-lg p-6 shadow mb-6">
+                            <h3 className="text-lg font-bold text-gray-900 mb-4">📊 Reviews by Division (All Years)</h3>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                                 <div className="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200">
                                     <span className="text-sm font-medium text-gray-700">Public Safety</span>
@@ -896,31 +930,13 @@
                                     <span className="text-xl font-bold text-pink-600">1</span>
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Expandable Year Details */}
-                            <details className="mt-6 group">
-                                <summary className="cursor-pointer list-none flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg hover:from-green-100 hover:to-emerald-100 transition-all border border-green-200">
-                                    <span className="font-bold text-green-800">📅 2025 Reviews (13 courses)</span>
-                                    <span className="text-green-600 group-open:rotate-180 transition-transform">▼</span>
-                                </summary>
-                                <div className="mt-2 p-4 bg-white rounded-lg border border-gray-200 text-sm space-y-1">
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-purple-600">COM 120</span> - Intro to Interpersonal Communication</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">BIO 111</span> - General Biology I</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">EDU 187</span> - Teaching and Learning for All</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-green-600">EDU 259</span> - Curriculum Planning</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">BUS 240</span> - Business Ethics</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">OST 288</span> - Medical Office Admin Capstone</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-blue-600">PAD 151</span> - Intro to Public Admin</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-orange-600">GRD 282</span> - Advertising Copywriting</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-pink-600">FSE 120</span> - Embalming Microbiology</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">CJC 132</span> - Court Procedure & Evidence</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">EPT 130</span> - Mitigation & Preparedness</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">EPT 140</span> - Emergency Management</div>
-                                    <div className="flex items-center gap-2"><span className="font-semibold text-red-600">FIP 230</span> - Chem of Hazardous Mat I</div>
-                                </div>
-                            </details>
+                        {/* Historical Reviews */}
+                        <div className="bg-white rounded-lg p-6 shadow">
+                            <h3 className="text-lg font-bold text-gray-900 mb-4">📚 Historical Reviews</h3>
 
-                            <details className="mt-4 group">
+                            <details className="group">
                                 <summary className="cursor-pointer list-none flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg hover:from-blue-100 hover:to-cyan-100 transition-all border border-blue-200">
                                     <span className="font-bold text-blue-800">📅 2024 Reviews (18 courses)</span>
                                     <span className="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
