@@ -1,8 +1,9 @@
-# HQCDP Dashboard - Dual-Mode Course Development Tracker
+# HQCDP Dashboard - 2025-2026 Academic Year
 
-A powerful, dual-mode dashboard for tracking High-Quality Course Development Program (HQCDP) progress. Features a simplified supervisor view for leadership and a comprehensive admin interface for course management.
+A powerful, dual-mode dashboard for tracking High-Quality Course Development Program (HQCDP) progress for the **2025-2026 academic year**. Features a simplified supervisor view for leadership and a comprehensive admin interface for course management.
 
-**Last Updated:** 2026-01-16
+**Current Academic Year:** 2025-2026
+**Last Updated:** 2026-02-12
 
 ## 🎯 Features
 
@@ -264,6 +265,13 @@ For issues or questions:
 
 ---
 
-**Version**: 2.0
-**Last Updated**: January 2026
+## 📦 Archive
+
+Historical documentation and data files have been moved to the `/archive` directory to maintain focus on the current 2025-2026 academic year.
+
+---
+
+**Version**: 2.1
+**Academic Year**: 2025-2026
+**Last Updated**: February 12, 2026
 **License**: Private Use
